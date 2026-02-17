@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLIPEC : Femme noire — Senghor | Le Professeur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1a1f3a;--cream:#faf6f0;--cream-dk:#f0ebe3;--amber:#e8a838;--amber-dk:#c48820;--coral:#e85d50;--teal:#2eb8a6;--violet:#7c5cbf;--violet-lt:#a78bfa;--rose:#e8789a;--td:#2a2a3d;--tm:#5a5a72;--tl:#8a8aa0;--bdr:#e5e0d8}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--td);line-height:1.7}a{color:var(--amber-dk);text-decoration:none}
+.topnav{background:var(--navy);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50}.topnav a{color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;gap:8px}.topnav a:hover{color:var(--amber)}.topnav .brand{font-family:'DM Serif Display',serif;font-size:18px;color:var(--amber)}.topnav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2}
+.page-hero{background:var(--navy);padding:40px 32px 48px;text-align:center}.page-hero .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(124,92,191,.2);color:var(--violet-lt);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:16px;margin-bottom:16px}.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,44px);color:#fff;max-width:700px;margin:0 auto 12px}.page-hero h1 em{color:var(--amber);font-style:italic}.page-hero .sub{color:rgba(255,255,255,.5);font-size:15px;max-width:600px;margin:0 auto}
+.bc{background:var(--cream-dk);border-bottom:1px solid var(--bdr);padding:10px 32px;font-size:13px;color:var(--tl)}.bc a{color:var(--tm)}.bc .sep{color:var(--bdr);margin:0 6px}
+.content{max-width:860px;margin:0 auto;padding:40px 24px 80px}
+.extrait{background:#fff;border-radius:16px;border:1px solid var(--bdr);padding:32px;margin-bottom:40px;position:relative}.extrait::before{content:'📜';position:absolute;top:-16px;left:24px;font-size:28px;background:var(--cream);padding:0 8px}.extrait h2{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:4px;color:var(--violet)}.extrait .ref{font-size:13px;color:var(--tl);margin-bottom:20px;font-style:italic}.extrait blockquote{font-size:14.5px;line-height:1.9;color:var(--tm);border-left:3px solid var(--violet);padding-left:20px;font-style:italic}.extrait blockquote strong{color:var(--td);font-style:normal;background:rgba(124,92,191,.08);padding:0 3px;border-radius:3px}
+.slipec-grid{display:flex;flex-direction:column;gap:20px;margin-bottom:40px}
+.step{background:#fff;border-radius:14px;border:1px solid var(--bdr);overflow:hidden}.step.open .step-body{max-height:2000px;padding:24px 28px 28px;opacity:1}
+.step-head{display:flex;align-items:center;gap:14px;padding:18px 24px;cursor:pointer;transition:background .2s;user-select:none}.step-head:hover{background:var(--cream)}
+.step-letter{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:22px;font-weight:700;color:#fff;flex-shrink:0}
+.step-head-text h3{font-size:16px;font-weight:700}.step-head-text span{font-size:12px;color:var(--tl)}
+.step-chevron{margin-left:auto;transition:transform .3s}.step-chevron svg{width:24px;height:24px;stroke:var(--tl);fill:none;stroke-width:2}.step.open .step-chevron{transform:rotate(180deg)}
+.step-body{max-height:0;padding:0 28px;opacity:0;overflow:hidden;transition:all .4s ease;font-size:14.5px;line-height:1.8;color:var(--tm)}.step-body p{margin-bottom:12px}.step-body .hl{background:rgba(124,92,191,.06);border-left:3px solid var(--violet);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}.step-body .hl b{color:var(--violet)}.step-body ul{padding-left:20px;margin:8px 0 12px}.step-body li{margin-bottom:6px}.step-body .cit{font-style:italic;color:var(--violet);background:rgba(124,92,191,.05);padding:8px 14px;border-radius:8px;margin:10px 0;display:block}
+.let-s{background:var(--violet)}.let-l{background:var(--teal)}.let-i{background:var(--amber)}.let-p{background:var(--coral)}.let-e{background:var(--rose)}.let-c{background:var(--navy)}
+.memo{background:linear-gradient(135deg,var(--violet),var(--violet-lt));border-radius:16px;padding:32px;color:#fff;margin:40px 0}.memo h3{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:12px}.memo ul{padding-left:20px}.memo li{margin-bottom:8px;opacity:.9}
+.progress-bar{background:var(--cream-dk);height:6px;border-radius:6px;margin:20px 0;overflow:hidden}.progress-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--violet),var(--violet-lt));transition:width 1s ease;width:0}
+.nav-bottom{display:flex;justify-content:space-between;gap:16px;margin-top:48px;flex-wrap:wrap}.nav-btn{flex:1;min-width:200px;background:#fff;border:1px solid var(--bdr);border-radius:12px;padding:16px 20px;text-decoration:none;color:var(--td);transition:all .3s;display:flex;align-items:center;gap:12px}.nav-btn:hover{border-color:var(--violet);box-shadow:0 4px 16px rgba(124,92,191,.1)}.nav-btn svg{width:20px;height:20px;stroke:var(--violet);fill:none;stroke-width:2;flex-shrink:0}.nav-btn small{font-size:11px;color:var(--tl);display:block}.nav-btn strong{font-size:14px}
+@media(max-width:768px){.topnav{padding:12px 16px}.page-hero{padding:28px 16px 36px}.content{padding:24px 16px 60px}.extrait{padding:20px}.step-head{padding:14px 16px}.nav-bottom{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav class="topnav"><a href="Le-Professeur-Lycee.html"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg> Retour au sommaire</a><span class="brand">Le Professeur</span></nav>
+<section class="page-hero"><div class="badge">🔬 Analyse SLIPEC · Terminale</div><h1>« <em>Femme noire</em> »</h1><p class="sub">Léopold Sédar Senghor — Analyse SLIPEC complète, animée et détaillée</p></section>
+<div class="bc"><a href="Le-Professeur-Lycee.html">Accueil</a><span class="sep">/</span><a href="Le-Professeur-Lycee.html">Terminale</a><span class="sep">/</span><strong>SLIPEC — Senghor</strong></div>
+
+<div class="content">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-size:13px;color:var(--tl);font-weight:600">Progression</span><span style="font-size:13px;color:var(--violet);font-weight:700" id="progText">0 / 6</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progBar"></div></div>
+
+<div class="extrait">
+<h2>Extrait étudié</h2>
+<p class="ref">Léopold Sédar Senghor, « Femme noire », <em>Chants d'ombre</em>, 1945</p>
+<blockquote>
+<strong>Femme nue, femme noire</strong><br>
+Vêtue de ta couleur qui est vie, de ta forme qui est beauté !<br>
+J'ai grandi à ton ombre ; la douceur de tes mains bandait mes yeux.<br>
+Et voilà qu'au cœur de l'Été et de Midi, je te découvre,<br>
+<strong>Terre promise</strong>, du haut d'un col calciné<br>
+Et ta beauté me foudroie en plein cœur, comme l'éclair d'un aigle.<br><br>
+
+Femme nue, femme obscure<br>
+<strong>Fruit mûr à la chair ferme</strong>, sombres extases du vin noir, bouche qui fais lyrique ma bouche<br>
+Savane aux horizons purs, savane qui frémis aux caresses ferventes du Vent d'Est<br>
+Tamtam sculpté, tamtam tendu qui grondes sous les doigts du vainqueur<br>
+<strong>Ta voix grave de contralto</strong> est le chant spirituel de l'Aimée.<br><br>
+
+Femme nue, femme obscure<br>
+Huile que ne ride nul souffle, huile calme aux flancs de l'athlète, aux flancs des princes du Mali<br>
+Gazelle aux attaches célestes, les perles sont étoiles sur la nuit de ta peau<br>
+Délices des jeux de l'esprit, les reflets de l'or rouge sur ta peau qui se moire<br>
+<strong>À l'ombre de ta chevelure</strong>, s'éclaire mon angoisse aux soleils prochains de tes yeux.<br><br>
+
+Femme nue, femme noire<br>
+Je chante ta beauté qui passe, forme que je fixe dans l'Éternel,<br>
+<strong>Avant que le Destin jaloux ne te réduise en cendres</strong> pour nourrir les racines de la vie.
+</blockquote>
+</div>
+
+<div class="slipec-grid">
+<div class="step" id="step-s"><div class="step-head" onclick="toggleStep('step-s')"><div class="step-letter let-s">S</div><div class="step-head-text"><h3>Situation</h3><span>Auteur, œuvre, contexte</span></div><div class="step-chevron"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div></div>
+<div class="step-body">
+<p><b>Léopold Sédar Senghor</b> (1906–2001), poète sénégalais, premier président du Sénégal (1960–1980), cofondateur de la <b>Négritude</b> avec Césaire et Damas, et premier Africain élu à l'Académie française.</p>
+<div class="hl"><b>L'œuvre :</b> « Femme noire » est le poème le plus célèbre de Senghor, extrait du recueil <em>Chants d'ombre</em> (1945). Il célèbre la femme africaine comme incarnation de la beauté, de la terre natale et de la civilisation noire.</div>
+<p><b>Contexte :</b> Écrit pendant la Seconde Guerre mondiale alors que Senghor est prisonnier en Allemagne, ce poème est un chant de nostalgie et de réaffirmation identitaire. La Négritude est alors un mouvement culturel et littéraire qui réhabilite les valeurs de la civilisation noire face à l'assimilation coloniale.</p>
+<p><b>Genre :</b> Poème lyrique en vers libres, proche du chant et de l'incantation traditionnelle africaine.</p>
+</div></div>
+
+<div class="step" id="step-l"><div class="step-head" onclick="toggleStep('step-l')"><div class="step-letter let-l">L</div><div class="step-head-text"><h3>Lecture</h3><span>Structure, ton, registre</span></div><div class="step-chevron"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div></div>
+<div class="step-body">
+<p><b>Structure en 4 strophes :</b></p>
+<ul>
+<li><b>Strophe 1 :</b> Découverte et éblouissement — la femme comme terre promise</li>
+<li><b>Strophe 2 :</b> Sensualité et musicalité — le corps comme instrument et paysage</li>
+<li><b>Strophe 3 :</b> Noblesse et raffinement — références au Mali ancien, aux princes</li>
+<li><b>Strophe 4 :</b> Conscience du temps — fixer la beauté éphémère dans l'éternel</li>
+</ul>
+<div class="hl"><b>Registre :</b> Lyrique et élégiaque. Le poème oscille entre célébration joyeuse et mélancolie face à la fuite du temps. Le ton est celui de l'hymne amoureux et sacré.</div>
+<p><b>Rythme :</b> Vers longs, amples, qui imitent le souffle du griot et le rythme du tamtam. L'anaphore « Femme nue, femme noire / femme obscure » structure le poème comme un refrain musical.</p>
+</div></div>
+
+<div class="step" id="step-i"><div class="step-head" onclick="toggleStep('step-i')"><div class="step-letter let-i">I</div><div class="step-head-text"><h3>Idée générale</h3><span>Problématique et message</span></div><div class="step-chevron"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div></div>
+<div class="step-body">
+<div class="hl"><b>Problématique :</b> Comment Senghor fait-il de la célébration de la femme noire un hymne à la beauté de l'Afrique et un manifeste de la Négritude ?</div>
+<p>Le poème opère une <b>triple identification</b> :</p>
+<ul>
+<li><b>Femme = Terre africaine :</b> « Terre promise », « savane aux horizons purs » — le corps féminin est un paysage</li>
+<li><b>Femme = Culture africaine :</b> « tamtam sculpté », « princes du Mali » — elle incarne la civilisation</li>
+<li><b>Femme = Vie universelle :</b> « ta couleur qui est vie » — elle est l'essence même de l'existence</li>
+</ul>
+<p>La femme noire n'est pas un simple objet de désir mais un <b>symbole total de l'Afrique</b>, de sa beauté, de sa dignité et de sa civilisation.</p>
+</div></div>
+
+<div class="step" id="step-p"><div class="step-head" onclick="toggleStep('step-p')"><div class="step-letter let-p">P</div><div class="step-head-text"><h3>Plan détaillé</h3><span>Axes d'analyse</span></div><div class="step-chevron"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div></div>
+<div class="step-body">
+<p><b>Axe I — Un blason de la femme africaine : le corps comme paysage</b></p>
+<ul>
+<li>Le blason traditionnel réinventé : « fruit mûr à la chair ferme », « huile calme aux flancs de l'athlète »</li>
+<li>Métaphores naturelles : savane, vent, gazelle — le corps féminin fusionne avec la nature africaine</li>
+<li>Les cinq sens convoqués : vue (couleur, or), toucher (mains, caresses), ouïe (tamtam, voix), goût (vin noir), odorat (huile)</li>
+</ul>
+<p><b>Axe II — La Négritude chantée : réhabilitation des valeurs noires</b></p>
+<ul>
+<li>Renversement du stigmate : « noire » et « obscure » deviennent synonymes de beauté et de vie</li>
+<li>Références à la grandeur historique : « princes du Mali » — l'empire du Mali médiéval</li>
+<li>Le tamtam comme symbole culturel et le « chant spirituel » comme art sacré</li>
+</ul>
+<p><b>Axe III — La dimension universelle et la conscience du temps</b></p>
+<ul>
+<li>« Je fixe dans l'Éternel » : la poésie comme moyen de vaincre le temps</li>
+<li>« Le Destin jaloux… cendres… racines de la vie » : cycle mort/renaissance</li>
+<li>La femme dépasse l'individuel pour devenir archétype — mère, terre, humanité</li>
+</ul>
+</div></div>
+
+<div class="step" id="step-e"><div class="step-head" onclick="toggleStep('step-e')"><div class="step-letter let-e">E</div><div class="step-head-text"><h3>Explication ponctuelle</h3><span>Procédés et citations</span></div><div class="step-chevron"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div></div>
+<div class="step-body">
+<p><b>1. L'anaphore structurante</b></p>
+<span class="cit">« Femme nue, femme noire » / « Femme nue, femme obscure »</span>
+<p>Refrain incantatoire qui donne au poème la structure d'un chant rituel. L'alternance « noire/obscure » enrichit la palette : la noirceur est tour à tour couleur, mystère, profondeur.</p>
+
+<p><b>2. La métaphore filée du paysage</b></p>
+<span class="cit">« Savane aux horizons purs, savane qui frémis aux caresses ferventes du Vent d'Est »</span>
+<p>Le corps de la femme devient paysage africain. Le « frémissement » personnifie la savane/femme qui réagit au vent/amant. L'érotisme est sublimé par la nature.</p>
+
+<p><b>3. La synesthésie</b></p>
+<span class="cit">« sombres extases du vin noir, bouche qui fais lyrique ma bouche »</span>
+<p>Mélange de sensations : goût (vin), vue (sombre), toucher (bouche), son (lyrique). La femme est une expérience sensorielle totale.</p>
+
+<p><b>4. L'oxymore final</b></p>
+<span class="cit">« te réduise en cendres pour nourrir les racines de la vie »</span>
+<p>La destruction (cendres) nourrit la vie (racines). Conception cyclique africaine du temps, opposée à la vision linéaire occidentale. La beauté ne meurt pas, elle se transforme.</p>
+</div></div>
+
+<div class="step" id="step-c"><div class="step-head" onclick="toggleStep('step-c')"><div class="step-letter let-c">C</div><div class="step-head-text"><h3>Conclusion</h3><span>Bilan et ouverture</span></div><div class="step-chevron"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div></div>
+<div class="step-body">
+<p><b>Bilan :</b> « Femme noire » est bien plus qu'un poème amoureux : c'est un <b>manifeste poétique de la Négritude</b>. En célébrant la femme, Senghor célèbre l'Afrique tout entière — sa nature, sa culture, sa spiritualité. Le poème accomplit une réhabilitation esthétique : le noir, longtemps déprécié, devient source de beauté et de vie.</p>
+<div class="hl"><b>Portée :</b> Ce poème est devenu un <b>classique de la littérature francophone</b>, étudié dans tous les lycées d'Afrique. Il a contribué à forger une fierté culturelle noire et reste un modèle d'écriture poétique engagée.</div>
+<p><b>Ouverture :</b> À rapprocher du <em>Cahier d'un retour au pays natal</em> de Césaire, qui traite les mêmes thèmes mais dans un registre plus violent et surréaliste. On peut aussi évoquer le « Discours sur le colonialisme » de Césaire (1950) pour la dimension politique de la Négritude.</p>
+</div></div>
+</div>
+
+<div class="memo">
+<h3>📝 À retenir pour le BAC</h3>
+<ul>
+<li><b>Mouvement :</b> Négritude — Senghor est le versant lyrique, Césaire le versant épique</li>
+<li><b>Genre :</b> Poème lyrique en vers libres, structure de chant/incantation</li>
+<li><b>Procédés :</b> Anaphore, métaphore filée, synesthésie, blason, oxymore</li>
+<li><b>Thèmes :</b> Beauté noire, Afrique-mère, sensualité sacrée, temps cyclique</li>
+<li><b>Citation-clé :</b> « Vêtue de ta couleur qui est vie, de ta forme qui est beauté »</li>
+</ul>
+</div>
+
+<div class="tip"><b>Rappel méthode SLIPEC :</b> <b>S</b>ituation (auteur, contexte) → <b>L</b>ecture (structure, ton) → <b>I</b>dée générale (problématique) → <b>P</b>lan (axes) → <b>E</b>xplication (procédés + citations) → <b>C</b>onclusion (bilan + ouverture). Suivez cet ordre au BAC — il vous garantit un commentaire structuré et complet.</div>
+<div class="nav-bottom">
+<a href="Le-Professeur-Lycee.html" class="nav-btn"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg><div><small>Retour</small><strong>Sommaire Terminale</strong></div></a>
+<a href="slipec-term-cesaire.html" class="nav-btn" style="text-align:right;justify-content:flex-end"><div><small>Fiche suivante</small><strong>SLIPEC : Césaire — Cahier d'un retour</strong></div><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></a>
+</div>
+</div>
+
+<script>
+var opened=new Set();function toggleStep(id){var el=document.getElementById(id);if(el.classList.contains('open')){el.classList.remove('open');opened.delete(id)}else{el.classList.add('open');opened.add(id)}var n=opened.size;document.getElementById('progText').textContent=n+' / 6';document.getElementById('progBar').style.width=Math.round(n/6*100)+'%'}
+setTimeout(function(){toggleStep('step-s')},400);
+</script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20 Exercices : Texte argumentatif &amp; Valeur des temps | Le Professeur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1a1f3a;--cream:#faf6f0;--cream-dk:#f0ebe3;--amber:#e8a838;--teal:#2eb8a6;--teal-lt:#3fd4be;--coral:#e85d50;--violet:#7c5cbf;--green:#34c77b;--td:#2a2a3d;--tm:#5a5a72;--tl:#8a8aa0;--bdr:#e5e0d8}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--td);line-height:1.7}a{color:var(--amber);text-decoration:none}
+.topnav{background:var(--navy);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50}.topnav a{color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;gap:8px}.topnav a:hover{color:var(--amber)}.topnav .brand{font-family:'DM Serif Display',serif;font-size:18px;color:var(--amber)}.topnav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2}
+.page-hero{background:var(--navy);padding:40px 32px 48px;text-align:center}.page-hero .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(46,184,166,.15);color:var(--teal-lt);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:16px;margin-bottom:16px}.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,40px);color:#fff;max-width:700px;margin:0 auto 12px}.page-hero h1 em{color:var(--amber);font-style:italic}.page-hero .sub{color:rgba(255,255,255,.5);font-size:15px}
+.bc{background:var(--cream-dk);border-bottom:1px solid var(--bdr);padding:10px 32px;font-size:13px;color:var(--tl)}.bc a{color:var(--tm)}.bc .sep{color:var(--bdr);margin:0 6px}
+.content{max-width:860px;margin:0 auto;padding:40px 24px 80px}
+
+/* SCORE */
+.score-bar{background:#fff;border:1px solid var(--bdr);border-radius:14px;padding:20px 24px;margin-bottom:32px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.score-circle{width:56px;height:56px;border-radius:50%;background:var(--cream-dk);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:22px;color:var(--teal);font-weight:700;flex-shrink:0}
+.score-info{flex:1}.score-info strong{font-size:16px;display:block}.score-info span{font-size:13px;color:var(--tl)}
+.score-prog{flex:2;min-width:200px}.score-prog-bar{height:8px;background:var(--cream-dk);border-radius:8px;overflow:hidden}.score-prog-fill{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--teal),var(--teal-lt));transition:width .6s ease}
+
+/* EXERCISE */
+.exo{background:#fff;border:1px solid var(--bdr);border-radius:14px;padding:28px;margin-bottom:20px;transition:border-color .3s}
+.exo.correct{border-color:var(--green)}.exo.wrong{border-color:var(--coral)}
+.exo-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.exo-num{width:32px;height:32px;border-radius:8px;background:var(--teal);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.exo-cat{font-size:11px;font-weight:600;padding:3px 10px;border-radius:6px;text-transform:uppercase;letter-spacing:.5px}
+.cat-arg{background:rgba(124,92,191,.1);color:var(--violet)}
+.cat-temps{background:rgba(232,168,56,.1);color:var(--amber)}
+.exo h3{font-size:15px;font-weight:600;margin-bottom:12px;line-height:1.5}
+.exo .context{background:var(--cream);padding:12px 16px;border-radius:8px;font-size:13.5px;line-height:1.7;margin-bottom:16px;font-style:italic;color:var(--tm)}
+
+/* OPTIONS */
+.opts{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.opt{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid var(--bdr);border-radius:10px;cursor:pointer;transition:all .2s;font-size:14px}
+.opt:hover{border-color:var(--teal);background:rgba(46,184,166,.03)}
+.opt.selected{border-color:var(--teal);background:rgba(46,184,166,.06);font-weight:600}
+.opt.right{border-color:var(--green);background:rgba(52,199,123,.08)}
+.opt.wrng{border-color:var(--coral);background:rgba(232,93,80,.06)}
+.opt-radio{width:18px;height:18px;border:2px solid var(--bdr);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.opt.selected .opt-radio{border-color:var(--teal)}.opt.selected .opt-radio::after{content:'';width:10px;height:10px;border-radius:50%;background:var(--teal)}
+.opt.right .opt-radio{border-color:var(--green)}.opt.right .opt-radio::after{content:'✓';font-size:11px;color:var(--green)}
+.opt.wrng .opt-radio{border-color:var(--coral)}.opt.wrng .opt-radio::after{content:'✗';font-size:11px;color:var(--coral)}
+
+/* VF */
+.vf-btns{display:flex;gap:10px;margin-bottom:16px}
+.vf-btn{flex:1;padding:12px;border:1px solid var(--bdr);border-radius:10px;text-align:center;font-weight:600;font-size:14px;cursor:pointer;transition:all .2s;background:#fff;font-family:inherit}
+.vf-btn:hover{border-color:var(--teal)}
+.vf-btn.selected{border-color:var(--teal);background:rgba(46,184,166,.06)}
+.vf-btn.right{border-color:var(--green);background:rgba(52,199,123,.1);color:var(--green)}
+.vf-btn.wrng{border-color:var(--coral);background:rgba(232,93,80,.06);color:var(--coral)}
+
+/* FILL */
+.fill-input{border:none;border-bottom:2px solid var(--bdr);padding:4px 8px;font-size:14px;font-family:inherit;color:var(--td);background:transparent;width:140px;transition:border-color .3s;outline:none}
+.fill-input:focus{border-color:var(--teal)}
+.fill-input.right{border-color:var(--green);color:var(--green)}
+.fill-input.wrng{border-color:var(--coral);color:var(--coral)}
+
+/* FEEDBACK */
+.fb{padding:12px 16px;border-radius:10px;font-size:13.5px;line-height:1.6;margin-top:12px;display:none}
+.fb.show{display:block}
+.fb-ok{background:rgba(52,199,123,.08);border-left:3px solid var(--green);color:#1a6b3a}
+.fb-no{background:rgba(232,93,80,.06);border-left:3px solid var(--coral);color:#8b2a20}
+
+/* CHECK BTN */
+.check-btn{background:var(--teal);color:#fff;border:none;border-radius:10px;padding:10px 24px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit}
+.check-btn:hover{background:#28a693}
+.check-btn:disabled{opacity:.4;cursor:default}
+
+.nav-bottom{display:flex;justify-content:space-between;gap:16px;margin-top:48px;flex-wrap:wrap}.nav-btn{flex:1;min-width:200px;background:#fff;border:1px solid var(--bdr);border-radius:12px;padding:16px 20px;text-decoration:none;color:var(--td);transition:all .3s;display:flex;align-items:center;gap:12px}.nav-btn:hover{border-color:var(--teal)}.nav-btn svg{width:20px;height:20px;stroke:var(--teal);fill:none;stroke-width:2;flex-shrink:0}.nav-btn small{font-size:11px;color:var(--tl);display:block}.nav-btn strong{font-size:14px}
+
+@media(max-width:768px){.topnav{padding:12px 16px}.page-hero{padding:28px 16px 36px}.content{padding:24px 16px 60px}.exo{padding:20px}.score-bar{flex-direction:column;text-align:center}.nav-bottom{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav class="topnav"><a href="Le-Professeur-Lycee.html"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg> Retour</a><span class="brand">Le Professeur</span></nav>
+<section class="page-hero"><div class="badge">✏️ L'ExoS de Manisto · Terminale</div><h1>20 exercices : <em>texte argumentatif</em> &amp; valeur des temps</h1><p class="sub">QCM, vrai/faux, textes à compléter — correction instantanée et feedback</p></section>
+<div class="bc"><a href="Le-Professeur-Lycee.html">Accueil</a><span class="sep">/</span>Terminale<span class="sep">/</span><strong>Exercices interactifs</strong></div>
+
+<div class="content">
+<div class="score-bar">
+<div class="score-circle" id="scoreNum">0</div>
+<div class="score-info"><strong>Score actuel</strong><span id="scoreSub">0 / 20 exercices réussis</span></div>
+<div class="score-prog"><div class="score-prog-bar"><div class="score-prog-fill" id="scoreFill" style="width:0"></div></div></div>
+</div>
+
+<div id="exoContainer"></div>
+
+<div class="memo" style="background:linear-gradient(135deg,#2eb8a6,#3fd4be);border-radius:16px;padding:32px;color:#fff;margin:40px 0"><h3>📝 À retenir après ces exercices</h3><ul>
+<li><b>Thèse + arguments + exemples</b> = structure de base de tout texte argumentatif</li>
+<li><b>Convaincre</b> (raison) ≠ <b>persuader</b> (émotions) — les combiner au BAC</li>
+<li><b>Concession</b> (certes… mais) = outil puissant pour montrer sa nuance</li>
+<li><b>Imparfait</b> = arrière-plan / <b>passé simple</b> = premier plan dans un récit</li>
+<li><b>Subjonctif</b> = mode de la subjectivité (souhait, doute, obligation)</li>
+<li>Toujours analyser la <b>valeur du temps</b> en commentaire, pas seulement le nommer</li>
+</ul></div>
+<div class="nav-bottom">
+<a href="Le-Professeur-Lycee.html" class="nav-btn"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg><div><small>Retour</small><strong>Sommaire Terminale</strong></div></a>
+<a href="slipec-term-cesaire.html" class="nav-btn" style="text-align:right;justify-content:flex-end"><div><small>Fiche suivante</small><strong>SLIPEC Césaire</strong></div><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></a>
+</div>
+</div>
+
+<script>
+var score=0,total=20;
+var exos=[
+{n:1,cat:"arg",q:"Dans un texte argumentatif, la thèse est :",opts:["Le résumé du texte","L'opinion défendue par l'auteur","Un exemple concret","Le titre du texte"],ans:1,expl:"La thèse est l'opinion, le point de vue que l'auteur cherche à faire partager au lecteur. Elle se distingue de l'argument (la preuve) et de l'exemple (l'illustration)."},
+{n:2,cat:"arg",q:"Quel connecteur logique exprime la concession ?",opts:["Donc","Certes… mais","Car","En effet"],ans:1,expl:"« Certes… mais » est le connecteur de la concession : on admet un argument adverse (certes) avant de le réfuter (mais). C'est essentiel en dissertation."},
+{n:3,cat:"arg",q:"Un argument d'autorité consiste à :",opts:["Donner un chiffre statistique","Citer une personne reconnue pour appuyer sa thèse","Raconter une anecdote personnelle","Utiliser une métaphore"],ans:1,expl:"L'argument d'autorité s'appuie sur la crédibilité d'un expert, d'un auteur reconnu ou d'une institution pour renforcer la thèse."},
+{n:4,cat:"temps",q:"Dans « Les élèves travaillaient quand le professeur entra », l'imparfait exprime :",opts:["Une action brève","Une action en cours d'accomplissement (arrière-plan)","Une habitude","Un fait futur"],ans:1,expl:"L'imparfait a ici une valeur d'arrière-plan : il décrit une action en cours (travaillaient) interrompue par le passé simple (entra), action de premier plan."},
+{n:5,cat:"temps",q:"Le présent de vérité générale se trouve dans :",opts:["« Je pars demain »","« L'eau bout à 100°C »","« En ce moment, je lis »","« Hier, il entre et me dit… »"],ans:1,expl:"« L'eau bout à 100°C » est un fait permanent, universel. Le présent a ici valeur de vérité générale, distinct du présent d'énonciation ou de narration."},
+{n:6,cat:"arg",type:"vf",q:"VRAI ou FAUX : Un texte argumentatif peut contenir des passages narratifs ou descriptifs.",ans:true,expl:"Vrai. L'argumentation peut s'appuyer sur des récits (arguments par l'exemple), des descriptions ou des comparaisons pour convaincre le lecteur."},
+{n:7,cat:"arg",q:"Quelle est la différence entre convaincre et persuader ?",opts:["Convaincre utilise la raison, persuader les émotions","Convaincre est oral, persuader est écrit","Persuader utilise la raison, convaincre les émotions","Il n'y a aucune différence"],ans:0,expl:"Convaincre fait appel à la raison (arguments logiques, preuves). Persuader fait appel aux émotions et aux sentiments (registre pathétique, lyrique). Les deux peuvent être combinés."},
+{n:8,cat:"temps",q:"« Napoléon naît en 1769 » : le présent est ici un présent de :",opts:["Vérité générale","Narration (historique)","Énonciation","Habitude"],ans:1,expl:"C'est un présent de narration (ou historique) : un fait passé raconté au présent pour le rendre plus vivant. Fréquent dans les textes historiques et journalistiques."},
+{n:9,cat:"arg",type:"vf",q:"VRAI ou FAUX : La thèse adverse est l'opinion que l'auteur défend.",ans:false,expl:"Faux. La thèse adverse (ou antithèse) est l'opinion contraire à celle de l'auteur. En dissertation, il est recommandé de la présenter puis de la réfuter."},
+{n:10,cat:"temps",q:"Le conditionnel dans « Si j'étais riche, je voyagerais » exprime :",opts:["Un ordre","Une certitude","Un souhait / une hypothèse irréelle","Le passé"],ans:2,expl:"Le conditionnel exprime ici une hypothèse irréelle (contraire à la réalité présente). La structure « si + imparfait → conditionnel présent » est le schéma classique de l'irréel du présent."},
+{n:11,cat:"arg",q:"Quel type d'argument est : « D'après une étude de l'OMS, 80% des maladies sont liées à l'eau » ?",opts:["Argument par analogie","Argument d'autorité + argument statistique","Argument ad hominem","Argument par l'absurde"],ans:1,expl:"Cet argument combine l'autorité (OMS, institution reconnue) et la statistique (80%). C'est un argument très efficace dans un texte argumentatif."},
+{n:12,cat:"temps",type:"vf",q:"VRAI ou FAUX : Le passé simple exprime une action de second plan dans un récit.",ans:false,expl:"Faux. Le passé simple exprime les actions de premier plan (événements ponctuels qui font avancer le récit). L'imparfait exprime le second plan (descriptions, actions en cours)."},
+{n:13,cat:"arg",q:"Dans une dissertation, le plan dialectique suit l'ordre :",opts:["Introduction — exemples — conclusion","Thèse — antithèse — synthèse","Causes — conséquences — solutions","Passé — présent — futur"],ans:1,expl:"Le plan dialectique (thèse / antithèse / synthèse) est le plus courant au BAC. On défend une position, on examine l'objection, puis on dépasse le débat."},
+{n:14,cat:"temps",q:"« Chaque matin, il prenait son café à 7h » : l'imparfait exprime :",opts:["Une description","Une action soudaine","Une habitude dans le passé","Un souhait"],ans:2,expl:"L'imparfait a ici une valeur d'habitude (ou itérative). « Chaque matin » confirme la répétition. C'est l'une des valeurs les plus fréquentes de l'imparfait."},
+{n:15,cat:"arg",q:"Un contre-argument sert à :",opts:["Résumer la thèse de l'auteur","Réfuter un argument adverse","Changer de sujet","Conclure le texte"],ans:1,expl:"Le contre-argument permet de réfuter la thèse adverse. Il montre que l'auteur a considéré les objections et les a dépassées, ce qui renforce sa propre thèse."},
+{n:16,cat:"temps",q:"Le subjonctif dans « Il faut que tu viennes » exprime :",opts:["Une certitude","Une obligation / nécessité subjective","Le passé","Une description"],ans:1,expl:"Le subjonctif est le mode de la subjectivité : souhait, doute, obligation, nécessité. Après « il faut que », le subjonctif est obligatoire."},
+{n:17,cat:"arg",type:"vf",q:"VRAI ou FAUX : L'exemple est un argument.",ans:false,expl:"Faux. L'exemple illustre un argument mais n'est pas un argument en soi. Un argument est une idée abstraite qui soutient la thèse ; l'exemple est le cas concret qui l'illustre."},
+{n:18,cat:"temps",q:"« Demain, nous partirons à l'aube » : le futur exprime ici :",opts:["Une habitude","Un projet / une action programmée","Un ordre","Une vérité générale"],ans:1,expl:"Le futur simple exprime ici un projet, une action prévue dans l'avenir. Il peut aussi exprimer un ordre (« Tu feras tes devoirs »), une prédiction ou une promesse."},
+{n:19,cat:"arg",q:"Quel registre utilise un auteur qui écrit : « Pauvres enfants affamés, livrés à la cruauté du monde ! » ?",opts:["Comique","Didactique","Pathétique","Ironique"],ans:2,expl:"Le registre pathétique vise à émouvoir, à susciter la pitié. Les termes « pauvres », « affamés », « cruauté » jouent sur l'émotion du lecteur pour le persuader."},
+{n:20,cat:"temps",q:"Dans « Il eut fini avant que nous arrivions », « eut fini » est un :",opts:["Plus-que-parfait","Passé antérieur","Passé composé","Futur antérieur"],ans:1,expl:"Le passé antérieur exprime une action accomplie juste avant une autre action au passé simple. Il se forme avec l'auxiliaire au passé simple + participe passé."}
+];
+
+function render(){
+var c=document.getElementById('exoContainer');
+c.innerHTML=exos.map(function(ex){
+var h='<div class="exo" id="exo'+ex.n+'">';
+h+='<div class="exo-head"><div class="exo-num">'+ex.n+'</div><span class="exo-cat '+(ex.cat==='arg'?'cat-arg':'cat-temps')+'">'+(ex.cat==='arg'?'Argumentation':'Valeur des temps')+'</span></div>';
+h+='<h3>'+ex.q+'</h3>';
+if(ex.type==='vf'){
+h+='<div class="vf-btns"><button class="vf-btn" onclick="checkVF('+ex.n+',true)">✅ VRAI</button><button class="vf-btn" onclick="checkVF('+ex.n+',false)">❌ FAUX</button></div>';
+}else{
+h+='<div class="opts">';
+ex.opts.forEach(function(o,i){
+h+='<div class="opt" onclick="selectOpt('+ex.n+','+i+')" id="opt-'+ex.n+'-'+i+'"><div class="opt-radio"></div><span>'+o+'</span></div>';
+});
+h+='</div>';
+h+='<button class="check-btn" id="btn-'+ex.n+'" onclick="checkQCM('+ex.n+')" disabled>Vérifier ma réponse</button>';
+}
+h+='<div class="fb fb-ok" id="fb-ok-'+ex.n+'"></div>';
+h+='<div class="fb fb-no" id="fb-no-'+ex.n+'"></div>';
+h+='</div>';
+return h;
+}).join('');
+}
+
+var selections={};
+function selectOpt(n,i){
+selections[n]=i;
+var ex=exos.find(function(e){return e.n===n});
+ex.opts.forEach(function(_,j){
+document.getElementById('opt-'+n+'-'+j).className='opt'+(j===i?' selected':'');
+});
+document.getElementById('btn-'+n).disabled=false;
+}
+
+function checkQCM(n){
+var ex=exos.find(function(e){return e.n===n});
+var sel=selections[n];
+var isCorrect=sel===ex.ans;
+ex.opts.forEach(function(_,j){
+var el=document.getElementById('opt-'+n+'-'+j);
+el.style.pointerEvents='none';
+if(j===ex.ans)el.className='opt right';
+else if(j===sel&&!isCorrect)el.className='opt wrng';
+});
+document.getElementById('btn-'+n).disabled=true;
+showFeedback(n,isCorrect,ex.expl);
+if(isCorrect)addScore();
+document.getElementById('exo'+n).classList.add(isCorrect?'correct':'wrong');
+}
+
+function checkVF(n,answer){
+var ex=exos.find(function(e){return e.n===n});
+var isCorrect=answer===ex.ans;
+var btns=document.querySelectorAll('#exo'+n+' .vf-btn');
+btns.forEach(function(b){b.style.pointerEvents='none'});
+btns[0].className='vf-btn'+(ex.ans===true?' right':(!isCorrect&&answer===true?' wrng':''));
+btns[1].className='vf-btn'+(ex.ans===false?' right':(!isCorrect&&answer===false?' wrng':''));
+showFeedback(n,isCorrect,ex.expl);
+if(isCorrect)addScore();
+document.getElementById('exo'+n).classList.add(isCorrect?'correct':'wrong');
+}
+
+function showFeedback(n,ok,expl){
+if(ok){
+var el=document.getElementById('fb-ok-'+n);
+el.innerHTML='<b>✅ Bonne réponse !</b> '+expl;
+el.classList.add('show');
+}else{
+var el=document.getElementById('fb-no-'+n);
+el.innerHTML='<b>❌ Incorrect.</b> '+expl;
+el.classList.add('show');
+}
+}
+function addScore(){
+score++;
+document.getElementById('scoreNum').textContent=score;
+document.getElementById('scoreSub').textContent=score+' / '+total+' exercices réussis';
+document.getElementById('scoreFill').style.width=Math.round(score/total*100)+'%';
+}
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLIPEC : Cahier d'un retour au pays natal — Césaire | Le Professeur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1a1f3a;--navy-deep:#0f1225;--cream:#faf6f0;--cream-dk:#f0ebe3;--amber:#e8a838;--amber-dk:#c48820;--coral:#e85d50;--teal:#2eb8a6;--violet:#7c5cbf;--violet-lt:#a78bfa;--rose:#e8789a;--td:#2a2a3d;--tm:#5a5a72;--tl:#8a8aa0;--bdr:#e5e0d8}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--td);line-height:1.7}
+a{color:var(--amber-dk);text-decoration:none}
+
+/* NAV */
+.topnav{background:var(--navy);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50}
+.topnav a{color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;gap:8px}
+.topnav a:hover{color:var(--amber)}
+.topnav .brand{font-family:'DM Serif Display',serif;font-size:18px;color:var(--amber)}
+.topnav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2}
+
+/* HERO */
+.page-hero{background:var(--navy);padding:40px 32px 48px;text-align:center}
+.page-hero .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(124,92,191,.2);color:var(--violet-lt);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:16px;margin-bottom:16px}
+.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,44px);color:#fff;max-width:700px;margin:0 auto 12px}
+.page-hero h1 em{color:var(--amber);font-style:italic}
+.page-hero .sub{color:rgba(255,255,255,.5);font-size:15px;max-width:600px;margin:0 auto}
+
+/* BREADCRUMB */
+.bc{background:var(--cream-dk);border-bottom:1px solid var(--bdr);padding:10px 32px;font-size:13px;color:var(--tl)}
+.bc a{color:var(--tm)}.bc a:hover{color:var(--amber-dk)}.bc .sep{color:var(--bdr);margin:0 6px}
+
+/* CONTENT */
+.content{max-width:860px;margin:0 auto;padding:40px 24px 80px}
+
+/* EXTRAIT */
+.extrait{background:#fff;border-radius:16px;border:1px solid var(--bdr);padding:32px;margin-bottom:40px;position:relative}
+.extrait::before{content:'📜';position:absolute;top:-16px;left:24px;font-size:28px;background:var(--cream);padding:0 8px}
+.extrait h2{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:4px;color:var(--violet)}
+.extrait .ref{font-size:13px;color:var(--tl);margin-bottom:20px;font-style:italic}
+.extrait blockquote{font-size:14.5px;line-height:1.9;color:var(--tm);border-left:3px solid var(--violet);padding-left:20px;font-style:italic}
+.extrait blockquote strong{color:var(--td);font-style:normal;background:rgba(124,92,191,.08);padding:0 3px;border-radius:3px}
+
+/* SLIPEC STEPS */
+.slipec-grid{display:flex;flex-direction:column;gap:20px;margin-bottom:40px}
+.step{background:#fff;border-radius:14px;border:1px solid var(--bdr);overflow:hidden;transition:all .3s}
+.step.open .step-body{max-height:2000px;padding:24px 28px 28px;opacity:1}
+.step-head{display:flex;align-items:center;gap:14px;padding:18px 24px;cursor:pointer;transition:background .2s;user-select:none}
+.step-head:hover{background:var(--cream)}
+.step-letter{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:22px;font-weight:700;color:#fff;flex-shrink:0}
+.step-head-text h3{font-size:16px;font-weight:700;line-height:1.2}
+.step-head-text span{font-size:12px;color:var(--tl)}
+.step-chevron{margin-left:auto;width:24px;height:24px;transition:transform .3s}
+.step-chevron svg{width:24px;height:24px;stroke:var(--tl);fill:none;stroke-width:2}
+.step.open .step-chevron{transform:rotate(180deg)}
+.step-body{max-height:0;padding:0 28px;opacity:0;overflow:hidden;transition:all .4s ease;font-size:14.5px;line-height:1.8;color:var(--tm)}
+.step-body p{margin-bottom:12px}
+.step-body .highlight{background:rgba(124,92,191,.06);border-left:3px solid var(--violet);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.step-body .highlight b{color:var(--violet)}
+.step-body ul{padding-left:20px;margin:8px 0 12px}
+.step-body li{margin-bottom:6px}
+.step-body .citation{font-style:italic;color:var(--violet);background:rgba(124,92,191,.05);padding:8px 14px;border-radius:8px;margin:10px 0;display:block}
+
+/* COLORS PER LETTER */
+.let-s{background:var(--violet)}
+.let-l{background:var(--teal)}
+.let-i{background:var(--amber)}
+.let-p{background:var(--coral)}
+.let-e{background:var(--rose)}
+.let-c{background:var(--navy)}
+
+/* MEMO BOX */
+.memo{background:linear-gradient(135deg,var(--violet),var(--violet-lt));border-radius:16px;padding:32px;color:#fff;margin:40px 0}
+.memo h3{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:12px}
+.memo ul{padding-left:20px}.memo li{margin-bottom:8px;opacity:.9}
+
+/* PROGRESS */
+.progress-bar{background:var(--cream-dk);height:6px;border-radius:6px;margin:20px 0;overflow:hidden}
+.progress-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--violet),var(--violet-lt));transition:width 1s ease;width:0}
+
+/* NAV BOTTOM */
+.nav-bottom{display:flex;justify-content:space-between;gap:16px;margin-top:48px;flex-wrap:wrap}
+.nav-btn{flex:1;min-width:200px;background:#fff;border:1px solid var(--bdr);border-radius:12px;padding:16px 20px;text-decoration:none;color:var(--td);transition:all .3s;display:flex;align-items:center;gap:12px}
+.nav-btn:hover{border-color:var(--violet);box-shadow:0 4px 16px rgba(124,92,191,.1)}
+.nav-btn svg{width:20px;height:20px;stroke:var(--violet);fill:none;stroke-width:2;flex-shrink:0}
+.nav-btn small{font-size:11px;color:var(--tl);display:block}
+.nav-btn strong{font-size:14px}
+
+@media(max-width:768px){
+.topnav{padding:12px 16px}.page-hero{padding:28px 16px 36px}.content{padding:24px 16px 60px}
+.extrait{padding:20px}.step-head{padding:14px 16px}.step-body{padding:0 16px}
+.step.open .step-body{padding:16px}
+.nav-bottom{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+<a href="Le-Professeur-Lycee.html"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg> Retour au sommaire</a>
+<span class="brand">Le Professeur</span>
+</nav>
+
+<section class="page-hero">
+<div class="badge">🔬 Analyse SLIPEC · Terminale</div>
+<h1>« Cahier d'un retour au <em>pays natal</em> »</h1>
+<p class="sub">Aimé Césaire — Extrait analysé selon la méthode SLIPEC, avec explications détaillées et animées</p>
+</section>
+
+<div class="bc"><a href="Le-Professeur-Lycee.html">Accueil</a><span class="sep">/</span><a href="Le-Professeur-Lycee.html#lycee">Terminale</a><span class="sep">/</span><strong>SLIPEC — Césaire</strong></div>
+
+<div class="content">
+
+<!-- PROGRESSION -->
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+<span style="font-size:13px;color:var(--tl);font-weight:600">Progression de la fiche</span>
+<span style="font-size:13px;color:var(--violet);font-weight:700" id="progText">0 / 6 étapes</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progBar"></div></div>
+
+<!-- EXTRAIT -->
+<div class="extrait">
+<h2>Extrait étudié</h2>
+<p class="ref">Aimé Césaire, <em>Cahier d'un retour au pays natal</em>, 1939 (éd. Présence Africaine, 1956)</p>
+<blockquote>
+Et elle est debout la négraille<br><br>
+
+la négraille assise<br>
+inattendument debout<br>
+debout dans la cale<br>
+debout dans les cabines<br>
+debout sur le pont<br>
+debout dans le vent<br>
+<strong>debout sous le soleil</strong><br>
+debout dans le sang<br>
+debout<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;et<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;libre<br><br>
+
+debout et non point pauvre folle dans sa liberté et son dénuement maritimes girant en la dérive parfaite et la voici :<br>
+plus inattendument debout<br>
+debout dans les cordages<br>
+debout à la barre<br>
+<strong>debout à la boussole</strong><br>
+debout à la carte<br>
+debout sous les étoiles<br>
+debout<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;et<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;libre<br><br>
+
+et le navire lustral s'avancer impavide sur les eaux écroulées.<br><br>
+
+Et maintenant pourrissent nos flocs d'ignominie !<br><br>
+
+par la mer cliquetante de midi<br>
+par le soleil bourgeonnant de minuit<br>
+<strong>écoutez le monde blanc</strong><br>
+horriblement las de son effort immense<br>
+ses articulations rebelles craquer sous les étoiles dures<br>
+ses raideurs d'acier bleu transperçant la chair mystique<br>
+écoute ses victoires proditoires trompeter ses défaites<br>
+écoute aux alibis grandioses son piètre trébuchement<br><br>
+
+Pitié pour nos vainqueurs omniscients et naïfs !<br><br>
+
+Eia pour ceux qui n'ont jamais rien inventé<br>
+pour ceux qui n'ont jamais rien exploré<br>
+pour ceux qui n'ont jamais rien dompté<br><br>
+
+<strong>mais ils s'abandonnent, saisis, à l'essence de toute chose</strong><br>
+ignorants des surfaces mais saisis par le mouvement de toute chose<br>
+insoucieux de dompter, mais jouant le jeu du monde<br><br>
+
+véritablement les fils aînés du monde<br>
+poreux à tous les souffles du monde<br>
+aire fraternelle de tous les souffles du monde<br>
+lit sans drain de toutes les eaux du monde<br>
+<strong>étincelle du feu sacré du monde</strong><br>
+chair de la chair du monde palpitant du mouvement même du monde !
+</blockquote>
+</div>
+
+<!-- SLIPEC STEPS -->
+<div class="slipec-grid">
+
+<!-- S -->
+<div class="step" id="step-s">
+<div class="step-head" onclick="toggleStep('step-s')">
+<div class="step-letter let-s">S</div>
+<div class="step-head-text"><h3>Situation</h3><span>Auteur, œuvre, contexte historique et littéraire</span></div>
+<div class="step-chevron"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+<div class="step-body">
+<p><b>Aimé Césaire</b> (1913–2008), poète, dramaturge et homme politique martiniquais, est l'un des fondateurs du mouvement de la <b>Négritude</b> avec Léopold Sédar Senghor et Léon-Gontran Damas.</p>
+<div class="highlight">
+<b>L'œuvre :</b> Le <em>Cahier d'un retour au pays natal</em>, publié en 1939 puis remanié en 1956, est un long poème en prose mêlant lyrisme, révolte et vision prophétique. Césaire y raconte le retour symbolique vers sa Martinique natale et, plus largement, vers l'identité noire niée par la colonisation.
+</div>
+<p><b>Contexte :</b> L'entre-deux-guerres voit naître à Paris le mouvement de la Négritude, en réaction à l'assimilation culturelle coloniale. Césaire, influencé par le surréalisme d'André Breton, forge une écriture de rupture, incandescente, qui mêle images violentes et souffle épique.</p>
+<p><b>Situation de l'extrait :</b> Ce passage se trouve à la fin du poème. Après un long parcours de prise de conscience, de colère et de souffrance, le poète atteint ici un sommet : la <b>libération proclamée</b>, le peuple noir debout, maître de son destin.</p>
+</div>
+</div>
+
+<!-- L -->
+<div class="step" id="step-l">
+<div class="step-head" onclick="toggleStep('step-l')">
+<div class="step-letter let-l">L</div>
+<div class="step-head-text"><h3>Lecture</h3><span>Structure, ton, impressions, registres dominants</span></div>
+<div class="step-chevron"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+<div class="step-body">
+<p><b>Structure :</b> L'extrait se divise en trois mouvements :</p>
+<ul>
+<li><b>Mouvement 1</b> (« Et elle est debout… libre ») : L'insurrection — le peuple noir se lève dans la cale du navire négrier, symbole de l'esclavage.</li>
+<li><b>Mouvement 2</b> (« debout dans les cordages… libre ») : La prise de pouvoir — les esclaves deviennent maîtres du navire, de la navigation, de leur propre destin.</li>
+<li><b>Mouvement 3</b> (« écoutez le monde blanc… du monde ») : Le renversement des valeurs — le « monde blanc » s'effondre tandis que la civilisation noire est célébrée comme source de vie.</li>
+</ul>
+<p><b>Ton et registre :</b> Le registre est à la fois <b>épique</b> (souffle, amplification, accumulation) et <b>lyrique</b> (émotion, exaltation). L'écriture est proche de l'incantation, du chant sacré.</p>
+<div class="highlight">
+<b>Impression dominante :</b> Un élan irrésistible de libération, un cri de triomphe qui emporte tout sur son passage. Le lecteur ressent physiquement le mouvement d'élévation : de la cale vers le pont, du pont vers les étoiles.
+</div>
+<p><b>Versification :</b> Prose poétique sans mètre fixe, mais avec un rythme puissant créé par l'anaphore de « debout » (répété plus de 15 fois), les parallélismes et la disposition typographique en escalier.</p>
+</div>
+</div>
+
+<!-- I -->
+<div class="step" id="step-i">
+<div class="step-head" onclick="toggleStep('step-i')">
+<div class="step-letter let-i">I</div>
+<div class="step-head-text"><h3>Idée générale</h3><span>Problématique et message central du texte</span></div>
+<div class="step-chevron"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+<div class="step-body">
+<div class="highlight">
+<b>Problématique :</b> Comment Césaire transforme-t-il le souvenir de l'esclavage en un chant de libération et de réhabilitation de la civilisation noire ?
+</div>
+<p><b>Message central :</b> L'extrait opère un triple renversement :</p>
+<ul>
+<li><b>Du passif à l'actif :</b> la « négraille assise » devient « debout et libre » — l'esclave devient sujet de sa propre histoire.</li>
+<li><b>Du méprisé au célébré :</b> ceux qui « n'ont jamais rien inventé » sont en réalité « les fils aînés du monde », connectés à l'essence même de la vie.</li>
+<li><b>Du dominé au lucide :</b> le regard se retourne vers le « monde blanc, horriblement las », dont les victoires sont « proditoires » (traîtresses).</li>
+</ul>
+<p>Ce texte est un <b>manifeste de la Négritude</b> : il ne s'agit pas de revanche mais de <b>réappropriation identitaire</b> et de célébration d'une manière d'être au monde.</p>
+</div>
+</div>
+
+<!-- P -->
+<div class="step" id="step-p">
+<div class="step-head" onclick="toggleStep('step-p')">
+<div class="step-letter let-p">P</div>
+<div class="step-head-text"><h3>Plan détaillé</h3><span>Axes d'analyse structurés</span></div>
+<div class="step-chevron"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+<div class="step-body">
+<p><b>Axe I — L'épopée de la libération : du navire négrier au navire conquis</b></p>
+<ul>
+<li>L'anaphore « debout » comme moteur rythmique de l'insurrection</li>
+<li>La progression spatiale : cale → cabines → pont → cordages → barre → boussole → étoiles</li>
+<li>Le mot « libre », isolé typographiquement, comme aboutissement</li>
+<li>Le « navire lustral » : image de purification — le bateau de l'esclavage devient celui de la renaissance</li>
+</ul>
+<p><b>Axe II — Le renversement des civilisations : critique du « monde blanc »</b></p>
+<ul>
+<li>L'ironie cinglante : « Pitié pour nos vainqueurs omniscients et naïfs ! »</li>
+<li>Les images de décrépitude : « articulations rebelles », « raideurs d'acier bleu », « piètre trébuchement »</li>
+<li>L'oxymore « victoires proditoires » : les victoires coloniales sont en réalité des trahisons</li>
+<li>Le monde blanc présenté comme épuisé, mécanisé, coupé de la vie</li>
+</ul>
+<p><b>Axe III — La célébration de la Négritude : « les fils aînés du monde »</b></p>
+<ul>
+<li>Le renversement du discours colonial : « ceux qui n'ont jamais rien inventé » → revendication positive</li>
+<li>Opposition entre « dompter » (Occident) et « jouer le jeu du monde » (Négritude)</li>
+<li>La communion cosmique : « poreux à tous les souffles du monde »</li>
+<li>L'accumulation finale : « chair de la chair du monde » — fusion charnelle et spirituelle avec l'univers</li>
+</ul>
+</div>
+</div>
+
+<!-- E -->
+<div class="step" id="step-e">
+<div class="step-head" onclick="toggleStep('step-e')">
+<div class="step-letter let-e">E</div>
+<div class="step-head-text"><h3>Explication ponctuelle</h3><span>Procédés de style marquants, citations analysées</span></div>
+<div class="step-chevron"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+<div class="step-body">
+<p><b>1. L'anaphore de « debout »</b></p>
+<span class="citation">« debout dans la cale / debout dans les cabines / debout sur le pont / debout dans le vent »</span>
+<p>Effet de martèlement, de tambour. Chaque répétition est un coup porté contre les chaînes. La progression des lieux mime l'ascension physique et symbolique vers la liberté.</p>
+
+<p><b>2. La mise en page signifiante</b></p>
+<span class="citation">« debout / &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;et / &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;libre »</span>
+<p>Le mot « libre » est décalé, isolé, comme suspendu dans l'espace. La disposition en escalier ascendant visualise l'élévation. Le blanc typographique devient un espace de respiration, de conquête.</p>
+
+<p><b>3. L'oxymore et l'ironie</b></p>
+<span class="citation">« victoires proditoires » — « vainqueurs omniscients et naïfs »</span>
+<p>« Proditoire » (du latin <em>proditio</em> : trahison) : les victoires coloniales sont fondées sur la traîtrise. L'alliance « omniscients et naïfs » est un oxymore qui dénonce l'arrogance aveugle de l'Occident.</p>
+
+<p><b>4. La métaphore cosmique finale</b></p>
+<span class="citation">« poreux à tous les souffles du monde / étincelle du feu sacré du monde / chair de la chair du monde »</span>
+<p>Accumulation de métaphores élémentaires (souffle/air, feu, chair/terre). Le peuple noir est présenté comme la matière vivante du monde, non pas en marge mais au centre. L'expression « chair de la chair » rappelle la Genèse biblique — Césaire fonde une cosmogonie noire.</p>
+
+<p><b>5. Le néologisme et le vocabulaire savant</b></p>
+<p>Césaire mêle registre soutenu (« lustral », « proditoire », « impavide ») et invention langagière (« négraille » — terme volontairement cru, retourné en étendard de fierté). Ce mélange est caractéristique de son écriture surréaliste engagée.</p>
+</div>
+</div>
+
+<!-- C -->
+<div class="step" id="step-c">
+<div class="step-head" onclick="toggleStep('step-c')">
+<div class="step-letter let-c">C</div>
+<div class="step-head-text"><h3>Conclusion</h3><span>Bilan, portée et ouverture</span></div>
+<div class="step-chevron"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+<div class="step-body">
+<p><b>Bilan :</b> Cet extrait final du <em>Cahier</em> est le point culminant du poème. Par un souffle épique et une écriture incandescente, Césaire accomplit trois gestes fondamentaux :</p>
+<ul>
+<li><b>Raconter</b> la libération — les esclaves prennent le navire, métaphore de la prise en main du destin historique.</li>
+<li><b>Dénoncer</b> la civilisation coloniale — un monde « horriblement las », dont les victoires sont des trahisons.</li>
+<li><b>Célébrer</b> la Négritude — non comme un repli identitaire mais comme une ouverture au monde, une porosité vitale à « tous les souffles du monde ».</li>
+</ul>
+<div class="highlight">
+<b>Portée :</b> Ce texte dépasse le contexte antillais pour devenir un <b>hymne universel à la dignité humaine</b>. Il a profondément influencé les mouvements de décolonisation en Afrique et aux Antilles, et reste une référence majeure de la littérature francophone.
+</div>
+<p><b>Ouverture :</b> On peut rapprocher ce texte de « Femme noire » de Senghor, qui célèbre également l'identité noire, mais dans un registre plus lyrique et contemplatif. On peut aussi le mettre en perspective avec les discours de Frantz Fanon (<em>Peau noire, masques blancs</em>, 1952), qui analyse les mécanismes psychologiques de la colonisation.</p>
+</div>
+</div>
+
+</div>
+
+<!-- MEMO -->
+<div class="memo">
+<h3>📝 À retenir pour le BAC</h3>
+<ul>
+<li><b>Mouvement :</b> Négritude (Césaire, Senghor, Damas) — années 1930-1960</li>
+<li><b>Registres :</b> Épique + lyrique + polémique</li>
+<li><b>Procédés clés :</b> Anaphore, accumulation, oxymore, mise en page signifiante, néologismes</li>
+<li><b>Thèmes :</b> Libération, identité noire, critique coloniale, communion avec le monde</li>
+<li><b>Citation-clé :</b> « véritablement les fils aînés du monde / poreux à tous les souffles du monde »</li>
+<li><b>À rapprocher de :</b> Senghor « Femme noire », Fanon <em>Peau noire, masques blancs</em>, Damas <em>Pigments</em></li>
+</ul>
+</div>
+
+<!-- NAV BOTTOM -->
+<div class="nav-bottom">
+<a href="slipec-term-senghor.html" class="nav-btn">
+<svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+<div><small>Fiche précédente</small><strong>SLIPEC : Senghor — « Femme noire »</strong></div>
+</a>
+<a href="exo-term-argumentatif.html" class="nav-btn" style="text-align:right;justify-content:flex-end">
+<div><small>Fiche suivante</small><strong>20 exercices : argumentation</strong></div>
+<svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+</a>
+</div>
+
+</div>
+
+<script>
+var opened = new Set();
+function toggleStep(id) {
+  var el = document.getElementById(id);
+  if (el.classList.contains('open')) {
+    el.classList.remove('open');
+    opened.delete(id);
+  } else {
+    el.classList.add('open');
+    opened.add(id);
+  }
+  updateProgress();
+}
+function updateProgress() {
+  var n = opened.size;
+  document.getElementById('progText').textContent = n + ' / 6 étapes';
+  document.getElementById('progBar').style.width = Math.round(n/6*100) + '%';
+}
+// Auto-open first step
+setTimeout(function(){ toggleStep('step-s'); }, 400);
+</script>
+</body>
+</html>

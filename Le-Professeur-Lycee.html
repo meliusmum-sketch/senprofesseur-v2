@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Professeur — Cours de Français Lycée (Seconde, Première, Terminale)</title>
+<meta name="description" content="Le Professeur : fiches SLIPEC, exercices interactifs, corrigés BAC, commentaires composés. Seconde, Première et Terminale. Programme Sénégal/UCAD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1a1f3a;--navy-deep:#0f1225;--navy-light:#252b4d;--cream:#faf6f0;--cream-dk:#f0ebe3;--amber:#e8a838;--amber-lt:#f5c861;--amber-dk:#c48820;--coral:#e85d50;--teal:#2eb8a6;--teal-lt:#3fd4be;--violet:#7c5cbf;--violet-lt:#a78bfa;--sky:#4a9eed;--rose:#e8789a;--green:#34c77b;--td:#2a2a3d;--tm:#5a5a72;--tl:#8a8aa0;--bdr:#e5e0d8;--c6:#4a9eed;--c5:#2eb8a6;--c4:#e8a838;--c3:#e85d50;--c2:#7c5cbf;--c1:#e8789a;--ct:#e8a838}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--td);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.skip{position:absolute;top:-50px;left:50%;transform:translateX(-50%);background:var(--amber);color:var(--navy);padding:10px 20px;border-radius:0 0 8px 8px;font-weight:600;z-index:9999;text-decoration:none;transition:top .3s}.skip:focus{top:0}
+
+/* TOPBAR */
+.topbar{background:var(--navy-deep);color:rgba(255,255,255,.5);font-size:12px;padding:6px 32px;display:flex;justify-content:space-between;align-items:center}.topbar a{color:var(--amber);text-decoration:none}
+
+/* NAVBAR */
+.navbar{background:var(--navy);padding:0 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(15,18,37,.3)}
+.nbrand{display:flex;align-items:center;gap:12px;text-decoration:none;padding:14px 0}
+.nbrand-i{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--amber),var(--amber-lt));display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--navy);font-weight:800;font-family:'DM Serif Display',serif}
+.nbrand-t{font-family:'DM Serif Display',serif;font-size:20px;color:#fff;line-height:1.1;display:block}
+.nbrand-s{font-size:10px;color:var(--amber);letter-spacing:2px;text-transform:uppercase;font-weight:600;display:block}
+.nmenu{display:flex;align-items:center}.nlink{color:rgba(255,255,255,.7);text-decoration:none;font-size:13px;font-weight:500;padding:20px 18px;position:relative;transition:color .3s}.nlink:hover,.nlink.act{color:#fff}.nlink.act::after{content:'';position:absolute;bottom:0;left:18px;right:18px;height:3px;background:var(--amber);border-radius:3px 3px 0 0}
+.nlink .bdg{font-size:9px;background:var(--coral);color:#fff;padding:2px 6px;border-radius:10px;margin-left:4px;font-weight:700;vertical-align:super}
+.nact{display:flex;align-items:center;gap:8px}
+.nsrch{background:var(--navy-light);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.5);border-radius:8px;padding:8px 14px;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .3s;font-family:inherit}.nsrch:hover{border-color:rgba(255,255,255,.2);color:#fff}
+.nsrch kbd{font-size:10px;background:rgba(255,255,255,.08);padding:2px 5px;border-radius:3px;font-family:inherit}
+.ham{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:4px}.ham span{display:block;width:22px;height:2px;background:var(--amber);border-radius:2px;transition:all .3s}
+
+/* HERO */
+.hero{background:var(--navy);padding:48px 32px 56px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")}
+.hero-c{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.hero-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(232,168,56,.12);color:var(--amber);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:20px}
+.hero-ey .pls{width:8px;height:8px;border-radius:50%;background:var(--teal);animation:pls 2s ease infinite}
+@keyframes pls{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(46,184,166,.4)}50%{opacity:.8;box-shadow:0 0 0 8px rgba(46,184,166,0)}}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,56px);color:#fff;line-height:1.15;margin-bottom:16px}
+.hero h1 em{font-style:italic;color:var(--amber)}
+.hero-d{font-size:16px;line-height:1.7;color:rgba(255,255,255,.55);max-width:540px;margin:0 auto 32px}
+.hstats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}.hst{text-align:center}.hst-n{font-family:'DM Serif Display',serif;font-size:32px;color:var(--amber)}.hst-l{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+
+/* BREADCRUMB */
+.bc-bar{background:var(--cream-dk);border-bottom:1px solid var(--bdr);padding:12px 32px}
+.bc{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--tl);max-width:1200px;margin:0 auto}.bc a{color:var(--tm);text-decoration:none}.bc a:hover{color:var(--amber-dk)}.bc .sep{color:var(--bdr)}.bc .cur{color:var(--td);font-weight:600}
+
+/* LAYOUT */
+.lay{display:grid;grid-template-columns:260px 1fr;max-width:1400px;margin:0 auto;min-height:calc(100vh - 200px)}
+
+/* SIDEBAR */
+.sb{background:#fff;border-right:1px solid var(--bdr);padding:24px 0;position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto}
+.sb::-webkit-scrollbar{width:3px}.sb::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:3px}
+.sb-sec{margin-bottom:28px}.sb-h{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--tl);padding:0 20px;margin-bottom:8px}
+.sb-i{display:flex;align-items:center;gap:10px;padding:9px 20px;font-size:13px;font-weight:500;color:var(--tm);text-decoration:none;transition:all .2s;cursor:pointer;border:none;background:none;width:100%;text-align:left;font-family:inherit}
+.sb-i:hover{background:var(--cream);color:var(--td)}.sb-i.act{background:rgba(232,168,56,.08);color:var(--amber-dk);font-weight:600;border-right:3px solid var(--amber)}
+.sb-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.sb-cnt{margin-left:auto;font-size:11px;background:var(--cream-dk);color:var(--tl);padding:1px 7px;border-radius:10px;font-weight:600}
+.sb-prog{margin:0 20px 16px;height:4px;background:var(--cream-dk);border-radius:4px;overflow:hidden}
+.sb-prog-bar{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--teal),var(--teal-lt));transition:width .6s ease}
+.sb-prog-lbl{display:flex;justify-content:space-between;padding:0 20px;font-size:11px;color:var(--tl);margin-bottom:6px}
+
+/* CONTENT */
+.carea{padding:32px}
+.fbar{display:flex;align-items:center;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+.fbar-l{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--tl);margin-right:4px}
+.fbtn{padding:7px 16px;border-radius:20px;border:1px solid var(--bdr);background:#fff;color:var(--tm);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;font-family:inherit}
+.fbtn:hover{border-color:var(--amber);color:var(--amber-dk)}.fbtn.act{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* CARDS */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-bottom:48px}
+.cc{background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--bdr);transition:all .35s cubic-bezier(.16,1,.3,1);cursor:pointer;position:relative;text-decoration:none;color:inherit;display:block}
+.cc:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(26,31,58,.1);border-color:transparent}
+.cb{height:8px;width:100%}.cbd{padding:24px}
+.cm{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.clb{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:6px;color:#fff}
+.ctb{font-size:10px;font-weight:600;padding:3px 8px;border-radius:6px;background:var(--cream-dk);color:var(--tm);letter-spacing:.5px}
+.ctt{font-family:'DM Serif Display',serif;font-size:19px;line-height:1.3;margin-bottom:8px}
+.cds{font-size:13px;line-height:1.6;color:var(--tl);margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ctags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}.ctag{font-size:11px;padding:3px 8px;border-radius:4px;background:var(--cream);color:var(--tm);font-weight:500}
+.cf{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--cream-dk)}
+.cpw{flex:1;margin-right:12px}.cpt{font-size:11px;color:var(--tl);margin-bottom:4px;font-weight:500}
+.cpb{height:5px;background:var(--cream-dk);border-radius:5px;overflow:hidden}.cpf{height:100%;border-radius:5px;transition:width .8s ease}
+.car{width:32px;height:32px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;transition:all .3s;flex-shrink:0}
+.car svg{width:16px;height:16px;stroke:var(--tl);fill:none;stroke-width:2;transition:stroke .3s}
+.cc:hover .car{background:var(--amber)}.cc:hover .car svg{stroke:#fff}
+.cnew{position:absolute;top:16px;right:16px;background:var(--coral);color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:4px;text-transform:uppercase}
+
+/* LEVEL DIVIDERS */
+.ldiv{display:flex;align-items:center;gap:16px;margin:40px 0 24px}
+.ldiv-i{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#fff;font-family:'DM Serif Display',serif}
+.ldiv-t h3{font-family:'DM Serif Display',serif;font-size:22px;line-height:1.2}
+.ldiv-t span{font-size:13px;color:var(--tl)}.ldiv-ln{flex:1;height:1px;background:var(--bdr)}
+
+/* SEARCH */
+.sov{position:fixed;inset:0;z-index:999;background:rgba(15,18,37,.6);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;padding:100px 20px}
+.sov.open{display:flex}.sbox{background:#fff;border-radius:16px;width:100%;max-width:580px;box-shadow:0 16px 48px rgba(26,31,58,.12);overflow:hidden}
+.siw{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--bdr)}
+.siw svg{width:20px;height:20px;stroke:var(--tl);flex-shrink:0;fill:none;stroke-width:2}
+.sinp{flex:1;border:none;outline:none;font-size:16px;font-family:inherit;color:var(--td);background:transparent}.sinp::placeholder{color:var(--tl)}
+.sres{padding:12px;max-height:400px;overflow-y:auto}
+.sri{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit}
+.sri:hover{background:var(--cream)}.sri-d{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.sri-info strong{font-size:14px;display:block}.sri-info span{font-size:12px;color:var(--tl)}
+.shint{padding:16px;text-align:center;font-size:13px;color:var(--tl)}
+
+/* MOBILE TOGGLE */
+.sbtgl{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:80;background:var(--navy);color:#fff;border:none;border-radius:24px;padding:12px 24px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 8px 32px rgba(26,31,58,.12);align-items:center;gap:8px}
+.sbtgl svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2}
+
+/* FOOTER */
+.ft{background:var(--navy);color:rgba(255,255,255,.5);padding:48px 32px 24px;margin-top:60px}
+.ft-top{display:flex;justify-content:space-between;align-items:flex-start;max-width:1200px;margin:0 auto;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.ft-br{max-width:280px}.ft-bt{font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin-bottom:10px}.ft-br p{font-size:13px;line-height:1.7}
+.ft-cols{display:flex;gap:60px}.ft-col h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--amber);margin-bottom:14px}
+.ft-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;padding:3px 0;transition:color .2s}.ft-col a:hover{color:#fff}
+.ft-bot{max-width:1200px;margin:16px auto 0;display:flex;justify-content:space-between;align-items:center;font-size:12px;flex-wrap:wrap;gap:8px}.ft-bot a{color:var(--amber);text-decoration:none}
+
+/* ANIMATIONS */
+.rv{opacity:1;transform:translateY(0);transition:all .6s cubic-bezier(.16,1,.3,1)}.rv.pre{opacity:0;transform:translateY(24px)}.rv.vis{opacity:1;transform:translateY(0)}
+.sbov{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:199;display:none}.sbov.open{display:block}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.lay{grid-template-columns:1fr}.sb{position:fixed;left:-300px;top:0;bottom:0;width:280px;z-index:200;transition:left .3s ease;box-shadow:0 16px 48px rgba(26,31,58,.12);height:100vh}.sb.open{left:0}.sbtgl{display:flex}}
+@media(max-width:768px){.topbar{display:none}.navbar{padding:0 16px}.nmenu{display:none}.nmenu.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:8px 0;box-shadow:0 8px 32px rgba(0,0,0,.3)}.nlink{padding:14px 24px}.nlink.act::after{display:none}.nact{display:none}.ham{display:flex}.hero{padding:32px 20px 40px}.hstats{gap:24px}.carea{padding:20px 16px}.cgrid{grid-template-columns:1fr}.fbar{gap:8px}.ft-top{flex-direction:column}.ft-cols{flex-direction:column;gap:24px}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Aller au contenu principal</a>
+
+<!-- TOPBAR -->
+<div class="topbar">
+<span>📚 Programme conforme UCAD / Inspection Académique du Sénégal</span>
+<div style="display:flex;gap:16px;align-items:center"><span>🇸🇳 Dakar</span><a href="#">Aide</a></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
+<a href="#" class="nbrand" aria-label="Le Professeur — Accueil">
+<div class="nbrand-i">P</div>
+<div><span class="nbrand-t">Le Professeur</span><span class="nbrand-s">Français Lycée</span></div>
+</a>
+<div class="nmenu" id="navMenu" role="menubar">
+<a href="#lycee" class="nlink act" role="menuitem">Lycée</a>
+<a href="#" class="nlink" role="menuitem">SLIPEC <span class="bdg">New</span></a>
+<a href="#" class="nlink" role="menuitem">Exercices</a>
+<a href="#" class="nlink" role="menuitem">BAC</a>
+</div>
+<div class="nact"><button class="nsrch" id="searchBtn" aria-label="Rechercher"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> Rechercher… <kbd>⌘K</kbd></button></div>
+<button class="ham" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-label="Présentation">
+<div class="hero-bg" aria-hidden="true"></div>
+<div class="hero-c">
+<div class="hero-ey"><span class="pls" aria-hidden="true"></span> Plateforme Pédagogique 2025</div>
+<h1>Maîtrisez le Français,<br>de la 6<sup>e</sup> à la <em>Terminale</em></h1>
+<p class="hero-d">Fiches SLIPEC, exercices interactifs « L'ExoS de Manisto », corrigés BAC détaillés et commentaires composés animés. Tout le programme, illustré et accessible.</p>
+<div class="hstats">
+<div class="hst"><div class="hst-n">120+</div><div class="hst-l">Fiches de cours</div></div>
+<div class="hst"><div class="hst-n">200+</div><div class="hst-l">Exercices interactifs</div></div>
+<div class="hst"><div class="hst-n">10</div><div class="hst-l">Années BAC corrigées</div></div>
+<div class="hst"><div class="hst-n">7</div><div class="hst-l">Niveaux couverts</div></div>
+</div>
+</div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="bc-bar"><div class="bc" aria-label="Fil d'Ariane"><a href="#">🏠 Accueil</a><span class="sep">/</span><span class="cur">Tableau de bord</span></div></div>
+
+<!-- MAIN LAYOUT -->
+<div class="lay">
+
+<!-- SIDEBAR -->
+<aside class="sb" id="sidebar" role="complementary" aria-label="Navigation par niveaux">
+<div class="sb-sec"><div class="sb-h">Progression globale</div><div class="sb-prog-lbl"><span>18 / 60 fiches</span><span>30%</span></div><div class="sb-prog"><div class="sb-prog-bar" style="width:30%"></div></div></div>
+<div class="sb-sec"><div class="sb-h">Niveaux</div>
+<button class="sb-i" data-f="2nde" onclick="fC('2nde')"><span class="sb-dot" style="background:var(--c2)"></span>Seconde<span class="sb-cnt">15</span></button>
+<button class="sb-i" data-f="1ere" onclick="fC('1ere')"><span class="sb-dot" style="background:var(--c1)"></span>Première<span class="sb-cnt">18</span></button>
+<button class="sb-i" data-f="term" onclick="fC('term')"><span class="sb-dot" style="background:var(--ct)"></span>Terminale <small style="font-size:10px;color:var(--coral)">BAC</small><span class="sb-cnt">11</span></button>
+</div>
+<div class="sb-sec"><div class="sb-h">Types de contenu</div>
+<button class="sb-i" data-f="slipec" onclick="fC('slipec')"><span class="sb-dot" style="background:var(--violet)"></span>Fiches SLIPEC<span class="sb-cnt">30</span></button>
+<button class="sb-i" data-f="exo" onclick="fC('exo')"><span class="sb-dot" style="background:var(--teal)"></span>Exercices interactifs<span class="sb-cnt">200</span></button>
+<button class="sb-i" data-f="bac" onclick="fC('bac')"><span class="sb-dot" style="background:var(--coral)"></span>Corrigés BAC<span class="sb-cnt">30</span></button>
+<button class="sb-i" data-f="commentaire" onclick="fC('commentaire')"><span class="sb-dot" style="background:var(--rose)"></span>Commentaires<span class="sb-cnt">10</span></button>
+<button class="sb-i" data-f="all" onclick="fC('all')"><span class="sb-dot" style="background:var(--tl)"></span>Tout afficher</button>
+</div>
+</aside>
+<div class="sbov" id="sidebarOverlay"></div>
+
+<!-- CONTENT -->
+<main class="carea" id="main">
+
+<!-- FILTER BAR -->
+<div class="fbar">
+<span class="fbar-l">Filtrer :</span>
+<button class="fbtn act" onclick="fT(this,'all')">📚 Tout</button>
+<button class="fbtn" onclick="fT(this,'cours')">📖 Cours</button>
+<button class="fbtn" onclick="fT(this,'slipec')">🔬 SLIPEC</button>
+<button class="fbtn" onclick="fT(this,'exo')">✏️ Exercices</button>
+<button class="fbtn" onclick="fT(this,'bac')">🎓 BAC</button>
+<button class="fbtn" onclick="fT(this,'commentaire')">💬 Commentaires</button>
+</div>
+
+<!-- Seconde -->
+<div class="ldiv rv"><div class="ldiv-i" style="background:var(--c2)">2</div><div class="ldiv-t"><h3>Seconde</h3><span>15 fiches · Genres littéraires, baroque, classicisme, argumentatif</span></div><div class="ldiv-ln"></div></div>
+<div class="cgrid">
+
+<a href="slipec-2nde-baroque.html" class="cc rv" data-level="2nde" data-type="slipec">
+<div class="cb" style="background:linear-gradient(90deg,var(--violet),var(--violet-lt))"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--c2)">2nde</span><span class="ctb">🔬 SLIPEC</span></div>
+<h3 class="ctt">Le Baroque — Analyse SLIPEC</h3>
+<p class="cds">Fiche SLIPEC complète sur un extrait baroque (+500 mots). Situation, lecture, plan, conclusion.</p>
+<div class="ctags"><span class="ctag">Baroque</span><span class="ctag">SLIPEC</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">100% complété ✓</div><div class="cpb"><div class="cpf" style="width:100%;background:var(--green)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="cours-2nde-genres.html" class="cc rv" data-level="2nde" data-type="cours">
+<div class="cb" style="background:linear-gradient(90deg,var(--c2),#a98de8)"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--c2)">2nde</span><span class="ctb">📖 Cours</span></div>
+<h3 class="ctt">Les genres littéraires</h3>
+<p class="cds">Roman, théâtre, poésie, essai : caractéristiques et exemples d'œuvres africaines et françaises.</p>
+<div class="ctags"><span class="ctag">Littérature</span><span class="ctag">Genres</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">20% complété</div><div class="cpb"><div class="cpf" style="width:20%;background:var(--c2)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="cours-2nde-classicisme.html" class="cc rv" data-level="2nde" data-type="cours">
+<div class="cb" style="background:linear-gradient(90deg,var(--c2),#9070d0)"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--c2)">2nde</span><span class="ctb">📖 Cours</span></div>
+<h3 class="ctt">Le Classicisme : raison et bienséance</h3>
+<p class="cds">Règles classiques, unités, bienséance. Molière, Racine, Boileau. Comparaison baroque/classicisme.</p>
+<div class="ctags"><span class="ctag">Classicisme</span><span class="ctag">Molière</span><span class="ctag">Racine</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">Non commencé</div><div class="cpb"><div class="cpf" style="width:0%;background:var(--c2)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="cours-2nde-texte-argumentatif.html" class="cc rv" data-level="2nde" data-type="cours">
+<div class="cb" style="background:linear-gradient(90deg,var(--c2),#b098e0)"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--c2)">2nde</span><span class="ctb">📖 Cours</span></div>
+<h3 class="ctt">Le texte argumentatif</h3>
+<p class="cds">Types d'arguments, stratégies de persuasion, thèse/antithèse. Voltaire, textes de presse.</p>
+<div class="ctags"><span class="ctag">Argumentation</span><span class="ctag">Voltaire</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">45% complété</div><div class="cpb"><div class="cpf" style="width:45%;background:var(--c2)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="exo-2nde-analyse-texte.html" class="cc rv" data-level="2nde" data-type="exo">
+<div class="cb" style="background:linear-gradient(90deg,var(--teal),var(--teal-lt))"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--c2)">2nde</span><span class="ctb">✏️ ExoS de Manisto</span></div>
+<h3 class="ctt">Méthode : compte-rendu et synthèse</h3>
+<p class="cds">8 exercices interactifs sur la technique du compte-rendu de lecture et la synthèse de documents.</p>
+<div class="ctags"><span class="ctag">Méthodo</span><span class="ctag">Synthèse</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">Non commencé</div><div class="cpb"><div class="cpf" style="width:0%;background:var(--teal)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="cours-2nde-humanisme.html" class="cc rv" data-level="2nde" data-type="cours">
+<div class="cb" style="background:linear-gradient(90deg,var(--c2),#8868c0)"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--c2)">2nde</span><span class="ctb">📖 Cours</span></div>
+<h3 class="ctt">L'Humanisme : Rabelais, Montaigne</h3>
+<p class="cds">L'homme au centre, éducation, tolérance. Extraits de Gargantua et des Essais. Contexte Renaissance.</p>
+<div class="ctags"><span class="ctag">Humanisme</span><span class="ctag">Renaissance</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">Non commencé</div><div class="cpb"><div class="cpf" style="width:0%;background:var(--c2)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+</div>
+
+<!-- Première -->
+<div class="ldiv rv"><div class="ldiv-i" style="background:var(--c1)">1</div><div class="ldiv-t"><h3>Première</h3><span>18 fiches · Commentaire composé, romantisme, roman africain</span></div><div class="ldiv-ln"></div></div>
+<div class="cgrid">
+
+<a href="commentaire-1ere-hugo.html" class="cc rv" data-level="1ere" data-type="commentaire">
+<span class="cnew">Nouveau</span>
+<div class="cb" style="background:linear-gradient(90deg,var(--rose),#f0a0b8)"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--c1)">1ère</span><span class="ctb">💬 Commentaire</span></div>
+<h3 class="ctt">Commentaire animé : « Demain dès l'aube » — Hugo</h3>
+<p class="cds">Commentaire composé complet et animé. Introduction, axes, citations, conclusion.</p>
+<div class="ctags"><span class="ctag">Romantisme</span><span class="ctag">Hugo</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">Non commencé</div><div class="cpb"><div class="cpf" style="width:0%;background:var(--rose)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="slipec-1ere-mariama-ba.html" class="cc rv" data-level="1ere" data-type="slipec">
+<div class="cb" style="background:linear-gradient(90deg,var(--violet),var(--rose))"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--c1)">1ère</span><span class="ctb">🔬 SLIPEC</span></div>
+<h3 class="ctt">SLIPEC : « Une si longue lettre » — Mariama Bâ</h3>
+<p class="cds">Condition féminine, société sénégalaise, écriture épistolaire. Analyse approfondie.</p>
+<div class="ctags"><span class="ctag">Roman africain</span><span class="ctag">Mariama Bâ</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">50% complété</div><div class="cpb"><div class="cpf" style="width:50%;background:var(--violet)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="cours-1ere-romantisme.html" class="cc rv" data-level="1ere" data-type="cours">
+<div class="cb" style="background:linear-gradient(90deg,var(--c1),#f098b0)"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--c1)">1ère</span><span class="ctb">📖 Cours</span></div>
+<h3 class="ctt">Le Romantisme : passion et révolte</h3>
+<p class="cds">Hugo, Lamartine, Musset. Le « mal du siècle », lyrisme, nature, engagement. Fiche illustrée et animée.</p>
+<div class="ctags"><span class="ctag">Romantisme</span><span class="ctag">Hugo</span><span class="ctag">Lamartine</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">65% complété</div><div class="cpb"><div class="cpf" style="width:65%;background:var(--c1)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="cours-1ere-realisme.html" class="cc rv" data-level="1ere" data-type="cours">
+<div class="cb" style="background:linear-gradient(90deg,var(--c1),#d870a0)"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--c1)">1ère</span><span class="ctb">📖 Cours</span></div>
+<h3 class="ctt">Réalisme et Naturalisme</h3>
+<p class="cds">Balzac, Flaubert, Zola. Description du réel, fresque sociale, méthode expérimentale. Germinal.</p>
+<div class="ctags"><span class="ctag">Réalisme</span><span class="ctag">Zola</span><span class="ctag">Naturalisme</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">40% complété</div><div class="cpb"><div class="cpf" style="width:40%;background:var(--c1)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="cours-1ere-resume-discussion.html" class="cc rv" data-level="1ere" data-type="cours">
+<div class="cb" style="background:linear-gradient(90deg,var(--c1),#e890a8)"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--c1)">1ère</span><span class="ctb">📖 Fiche méthodo</span></div>
+<h3 class="ctt">Résumé-discussion : méthode BAC</h3>
+<p class="cds">Technique du résumé au quart, discussion structurée, entraînements avec corrigés progressifs.</p>
+<div class="ctags"><span class="ctag">Résumé</span><span class="ctag">Discussion</span><span class="ctag">BAC</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">Non commencé</div><div class="cpb"><div class="cpf" style="width:0%;background:var(--c1)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="commentaire-1ere-sembene.html" class="cc rv" data-level="1ere" data-type="commentaire">
+<div class="cb" style="background:linear-gradient(90deg,var(--rose),#e080a0)"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--c1)">1ère</span><span class="ctb">💬 Commentaire</span></div>
+<h3 class="ctt">Commentaire : « Les bouts de bois de Dieu » — Sembène</h3>
+<p class="cds">Commentaire composé animé. Lutte ouvrière, colonialisme, écriture engagée de Sembène Ousmane.</p>
+<div class="ctags"><span class="ctag">Sembène</span><span class="ctag">Roman africain</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">Non commencé</div><div class="cpb"><div class="cpf" style="width:0%;background:var(--rose)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="exo-1ere-figures-argumentation.html" class="cc rv" data-level="1ere" data-type="exo">
+<div class="cb" style="background:linear-gradient(90deg,var(--teal),var(--teal-lt))"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--c1)">1ère</span><span class="ctb">✏️ ExoS de Manisto</span></div>
+<h3 class="ctt">Exercices : argumentation avancée</h3>
+<p class="cds">15 exercices sur l'analyse argumentative complexe, concession, réfutation, registre polémique.</p>
+<div class="ctags"><span class="ctag">Argumentation</span><span class="ctag">Interactif</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">25% complété</div><div class="cpb"><div class="cpf" style="width:25%;background:var(--teal)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+</div>
+
+<!-- Terminale -->
+<div class="ldiv rv"><div class="ldiv-i" style="background:linear-gradient(135deg,var(--ct),var(--coral))">T</div><div class="ldiv-t"><h3>Terminale <span style="color:var(--coral);font-size:14px">· BAC</span></h3><span>11 fiches · Dissertation, SLIPEC, corrigés BAC 2015–2025, Négritude</span></div><div class="ldiv-ln"></div></div>
+<div class="cgrid">
+
+<a href="bac-poesie-2015-2025.html" class="cc rv" data-level="term" data-type="bac">
+<span class="cnew">Nouveau</span>
+<div class="cb" style="background:linear-gradient(90deg,var(--coral),var(--amber))"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--ct)">Term</span><span class="ctb">🎓 Corrigés BAC</span></div>
+<h3 class="ctt">BAC Poésie 2015–2025 : 10 années corrigées</h3>
+<p class="cds">Correction animée des 3 sujets de chaque année. Plans, introductions rédigées.</p>
+<div class="ctags"><span class="ctag">BAC</span><span class="ctag">Poésie</span><span class="ctag">10 ans</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">10% complété</div><div class="cpb"><div class="cpf" style="width:10%;background:var(--coral)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="exo-term-argumentatif.html" class="cc rv" data-level="term" data-type="exo">
+<div class="cb" style="background:linear-gradient(90deg,var(--teal),var(--teal-lt))"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--ct)">Term</span><span class="ctb">✏️ ExoS de Manisto</span></div>
+<h3 class="ctt">20 exercices : texte argumentatif &amp; valeur des temps</h3>
+<p class="cds">QCM, drag &amp; drop, vrai/faux. Correction instantanée et feedback animé.</p>
+<div class="ctags"><span class="ctag">Argumentation</span><span class="ctag">Temps verbaux</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">Non commencé</div><div class="cpb"><div class="cpf" style="width:0%;background:var(--teal)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="slipec-term-cesaire.html" class="cc rv" data-level="term" data-type="slipec">
+<div class="cb" style="background:linear-gradient(90deg,var(--violet),var(--amber))"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--ct)">Term</span><span class="ctb">🔬 SLIPEC</span></div>
+<h3 class="ctt">SLIPEC : « Cahier d'un retour au pays natal » — Césaire</h3>
+<p class="cds">Analyse approfondie. Négritude, engagement, surréalisme caribéen.</p>
+<div class="ctags"><span class="ctag">Négritude</span><span class="ctag">Césaire</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">80% complété</div><div class="cpb"><div class="cpf" style="width:80%;background:var(--violet)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="cours-term-dissertation.html" class="cc rv" data-level="term" data-type="cours">
+<div class="cb" style="background:linear-gradient(90deg,var(--ct),#f0c050)"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--ct)">Term</span><span class="ctb">📖 Fiche méthodo</span></div>
+<h3 class="ctt">La dissertation au BAC : méthode complète</h3>
+<p class="cds">Structure, intro, plan dialectique, rédaction, conclusion. Exemples corrigés.</p>
+<div class="ctags"><span class="ctag">Dissertation</span><span class="ctag">BAC</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">35% complété</div><div class="cpb"><div class="cpf" style="width:35%;background:var(--ct)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="slipec-term-senghor.html" class="cc rv" data-level="term" data-type="slipec">
+<div class="cb" style="background:linear-gradient(90deg,var(--violet),var(--amber))"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--ct)">Term</span><span class="ctb">🔬 SLIPEC</span></div>
+<h3 class="ctt">SLIPEC : « Femme noire » — Senghor</h3>
+<p class="cds">Analyse SLIPEC approfondie. Négritude, célébration de la femme africaine, rythme et musicalité.</p>
+<div class="ctags"><span class="ctag">Senghor</span><span class="ctag">Négritude</span><span class="ctag">Poésie</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">Non commencé</div><div class="cpb"><div class="cpf" style="width:0%;background:var(--violet)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="cours-term-surrealisme.html" class="cc rv" data-level="term" data-type="cours">
+<div class="cb" style="background:linear-gradient(90deg,var(--ct),#d8a030)"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--ct)">Term</span><span class="ctb">📖 Cours</span></div>
+<h3 class="ctt">Surréalisme et écriture moderne</h3>
+<p class="cds">Breton, Éluard, Apollinaire. Écriture automatique, images inattendues, libération de l'inconscient.</p>
+<div class="ctags"><span class="ctag">Surréalisme</span><span class="ctag">Apollinaire</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">Non commencé</div><div class="cpb"><div class="cpf" style="width:0%;background:var(--ct)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="cours-term-postcolonialisme.html" class="cc rv" data-level="term" data-type="cours">
+<span class="cnew">Nouveau</span>
+<div class="cb" style="background:linear-gradient(90deg,var(--ct),var(--coral))"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--ct)">Term</span><span class="ctb">📖 Cours</span></div>
+<h3 class="ctt">Littérature post-coloniale et francophone</h3>
+<p class="cds">Kourouma, Mabanckou, Fatou Diome. Immigration, identité, mondialisation dans le roman contemporain.</p>
+<div class="ctags"><span class="ctag">Post-colonialisme</span><span class="ctag">Francophonie</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">Non commencé</div><div class="cpb"><div class="cpf" style="width:0%;background:var(--ct)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="commentaire-term-kourouma.html" class="cc rv" data-level="term" data-type="commentaire">
+<div class="cb" style="background:linear-gradient(90deg,var(--rose),var(--amber))"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--ct)">Term</span><span class="ctb">💬 Commentaire</span></div>
+<h3 class="ctt">Commentaire : « Les soleils des indépendances » — Kourouma</h3>
+<p class="cds">Commentaire composé animé. Critique sociale, néo-colonialisme, oralité dans l'écriture.</p>
+<div class="ctags"><span class="ctag">Kourouma</span><span class="ctag">Roman africain</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">Non commencé</div><div class="cpb"><div class="cpf" style="width:0%;background:var(--rose)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+<a href="bac-roman-2020-2025.html" class="cc rv" data-level="term" data-type="bac">
+<div class="cb" style="background:linear-gradient(90deg,var(--coral),#f08060)"></div>
+<div class="cbd"><div class="cm"><span class="clb" style="background:var(--ct)">Term</span><span class="ctb">🎓 Corrigés BAC</span></div>
+<h3 class="ctt">BAC Roman 2020–2025 : sujets corrigés</h3>
+<p class="cds">6 années de sujets BAC sur le roman. Dissertations et commentaires corrigés pas à pas.</p>
+<div class="ctags"><span class="ctag">BAC</span><span class="ctag">Roman</span><span class="ctag">Corrigés</span></div>
+<div class="cf"><div class="cpw"><div class="cpt">Non commencé</div><div class="cpb"><div class="cpf" style="width:0%;background:var(--coral)"></div></div></div><div class="car"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+</div></a>
+
+</div>
+
+</main>
+</div>
+
+<!-- SEARCH MODAL -->
+<div class="sov" id="searchOverlay">
+<div class="sbox" role="dialog" aria-label="Rechercher">
+<div class="siw"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input type="search" class="sinp" id="searchInput" placeholder="Rechercher une fiche, un exercice, un auteur…"></div>
+<div class="sres" id="searchResults"><div class="shint">Tapez pour rechercher dans 120+ fiches et exercices</div></div>
+</div>
+</div>
+
+<!-- MOBILE SIDEBAR TOGGLE -->
+<button class="sbtgl" id="sidebarToggle"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg> Niveaux &amp; Filtres</button>
+
+<!-- FOOTER -->
+<footer class="ft" role="contentinfo">
+<div class="ft-top">
+<div class="ft-br"><div class="ft-bt">Le Professeur</div><p>Plateforme pédagogique de français pour les lycéens au Sénégal (Seconde, Première, Terminale). Conforme aux programmes UCAD.</p></div>
+<div class="ft-cols">
+
+<div class="ft-col"><h4>Lycée</h4><a href="#">Seconde — Fiches techniques</a><a href="#">Première — Commentaire</a><a href="#">Terminale — Dissertation &amp; BAC</a><a href="#">Méthode SLIPEC</a></div>
+<div class="ft-col"><h4>Ressources</h4><a href="#">L'ExoS de Manisto</a><a href="#">Corrigés BAC 2015–2025</a><a href="#">Mode d'emploi</a><a href="#">Contact</a></div>
+</div>
+</div>
+<div class="ft-bot"><span>© 2025 Le Professeur — Conçu avec ❤️ au Sénégal</span><span><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></span></div>
+</footer>
+
+<script>
+// Hamburger
+document.getElementById('hamburger').addEventListener('click',function(){var m=document.getElementById('navMenu');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)});
+
+// Sidebar mobile
+var sb=document.getElementById('sidebar'),sbov=document.getElementById('sidebarOverlay'),sbt=document.getElementById('sidebarToggle');
+if(sbt){sbt.addEventListener('click',function(){sb.classList.toggle('open');sbov.classList.toggle('open')})}
+if(sbov){sbov.addEventListener('click',function(){sb.classList.remove('open');sbov.classList.remove('open')})}
+
+// Search
+var sov=document.getElementById('searchOverlay'),sbtn=document.getElementById('searchBtn'),sinp=document.getElementById('searchInput');
+if(sbtn){sbtn.addEventListener('click',function(){sov.classList.add('open');setTimeout(function(){sinp.focus()},100)})}
+sov.addEventListener('click',function(e){if(e.target===sov)sov.classList.remove('open')});
+document.addEventListener('keydown',function(e){if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();sov.classList.toggle('open');if(sov.classList.contains('open'))setTimeout(function(){sinp.focus()},100)}if(e.key==='Escape')sov.classList.remove('open')});
+
+var cd=[
+{t:"Le Baroque — SLIPEC",l:"2nde",tp:"SLIPEC",c:"var(--c2)"},
+{t:"Les genres littéraires",l:"2nde",tp:"Cours",c:"var(--c2)"},
+{t:"Demain dès l'aube — Hugo",l:"1ère",tp:"Commentaire",c:"var(--c1)"},
+{t:"Une si longue lettre — Mariama Bâ",l:"1ère",tp:"SLIPEC",c:"var(--c1)"},
+{t:"BAC Poésie 2015–2025",l:"Term",tp:"BAC",c:"var(--ct)"},
+{t:"20 exercices argumentatif",l:"Term",tp:"Exercice",c:"var(--ct)"},
+{t:"Cahier d'un retour — Césaire",l:"Term",tp:"SLIPEC",c:"var(--ct)"},
+{t:"La dissertation au BAC",l:"Term",tp:"Méthodo",c:"var(--ct)"}
+];
+sinp.addEventListener('input',function(e){var q=e.target.value.toLowerCase().trim();var r=document.getElementById('searchResults');if(!q){r.innerHTML='<div class="shint">Tapez pour rechercher dans 120+ fiches</div>';return}var m=cd.filter(function(c){return c.t.toLowerCase().indexOf(q)>-1||c.l.toLowerCase().indexOf(q)>-1||c.tp.toLowerCase().indexOf(q)>-1});if(!m.length){r.innerHTML='<div class="shint">Aucun résultat pour «'+q+'»</div>';return}r.innerHTML=m.map(function(x){return '<a class="sri" href="#"><span class="sri-d" style="background:'+x.c+'"></span><div class="sri-info"><strong>'+x.t+'</strong><span>'+x.l+' · '+x.tp+'</span></div></a>'}).join('')});
+
+// Filter cards
+function fC(lv){document.querySelectorAll('.sb-i').forEach(function(i){i.classList.remove('act')});var c=document.querySelector('.sb-i[data-f="'+lv+'"]');if(c)c.classList.add('act');document.querySelectorAll('.cc').forEach(function(card){if(lv==='all'){card.style.display=''}else{var ok=card.dataset.level===lv||card.dataset.type===lv;card.style.display=ok?'':'none'}});document.querySelectorAll('.ldiv').forEach(function(d){d.style.display=lv==='all'?'':''})}
+function fT(btn,tp){document.querySelectorAll('.fbtn').forEach(function(b){b.classList.remove('act')});btn.classList.add('act');document.querySelectorAll('.cc').forEach(function(card){if(tp==='all'){card.style.display=''}else{card.style.display=card.dataset.type===tp?'':'none'}})}
+
+// Reveal
+// Reveal animation (progressive enhancement - cards visible by default)
+try{
+var ro=new IntersectionObserver(function(entries){entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('vis');e.target.classList.remove('pre')},i*40);ro.unobserve(e.target)}})},{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){el.classList.add('pre');ro.observe(el)});
+}catch(err){document.querySelectorAll('.rv').forEach(function(el){el.classList.remove('pre')})}
+</script>
+</body>
+</html>
