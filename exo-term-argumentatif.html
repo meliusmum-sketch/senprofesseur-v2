@@ -75,14 +75,14 @@
 </style>
 </head>
 <body>
-<nav class="topnav"><a href="Le-Professeur-Lycee.html"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg> Retour</a><span class="brand">Le Professeur</span></nav>
-<section class="page-hero"><div class="badge">✏️ L'ExoS de Manisto · Terminale</div><h1>20 exercices : <em>texte argumentatif</em> &amp; valeur des temps</h1><p class="sub">QCM, vrai/faux, textes à compléter — correction instantanée et feedback</p></section>
-<div class="bc"><a href="Le-Professeur-Lycee.html">Accueil</a><span class="sep">/</span>Terminale<span class="sep">/</span><strong>Exercices interactifs</strong></div>
+<nav class="topnav"><a href="index.html"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg> Retour</a><span class="brand">Le Professeur</span></nav>
+<section class="page-hero"><div class="badge">✏️ L'ExoS de Manisto · Terminale</div><h1>25 exercices : <em>texte argumentatif</em> &amp; valeur des temps</h1><p class="sub">QCM, vrai/faux, textes à compléter — correction instantanée et feedback</p></section>
+<div class="bc"><a href="index.html">Accueil</a><span class="sep">/</span>Terminale<span class="sep">/</span><strong>Exercices interactifs</strong></div>
 
 <div class="content">
 <div class="score-bar">
 <div class="score-circle" id="scoreNum">0</div>
-<div class="score-info"><strong>Score actuel</strong><span id="scoreSub">0 / 20 exercices réussis</span></div>
+<div class="score-info"><strong>Score actuel</strong><span id="scoreSub">0 / 25 exercices réussis</span></div>
 <div class="score-prog"><div class="score-prog-bar"><div class="score-prog-fill" id="scoreFill" style="width:0"></div></div></div>
 </div>
 
@@ -97,7 +97,7 @@
 <li>Toujours analyser la <b>valeur du temps</b> en commentaire, pas seulement le nommer</li>
 </ul></div>
 <div class="nav-bottom">
-<a href="Le-Professeur-Lycee.html" class="nav-btn"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg><div><small>Retour</small><strong>Sommaire Terminale</strong></div></a>
+<a href="index.html" class="nav-btn"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg><div><small>Retour</small><strong>Sommaire Terminale</strong></div></a>
 <a href="slipec-term-cesaire.html" class="nav-btn" style="text-align:right;justify-content:flex-end"><div><small>Fiche suivante</small><strong>SLIPEC Césaire</strong></div><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></a>
 </div>
 </div>
@@ -124,7 +124,12 @@ var exos=[
 {n:17,cat:"arg",type:"vf",q:"VRAI ou FAUX : L'exemple est un argument.",ans:false,expl:"Faux. L'exemple illustre un argument mais n'est pas un argument en soi. Un argument est une idée abstraite qui soutient la thèse ; l'exemple est le cas concret qui l'illustre."},
 {n:18,cat:"temps",q:"« Demain, nous partirons à l'aube » : le futur exprime ici :",opts:["Une habitude","Un projet / une action programmée","Un ordre","Une vérité générale"],ans:1,expl:"Le futur simple exprime ici un projet, une action prévue dans l'avenir. Il peut aussi exprimer un ordre (« Tu feras tes devoirs »), une prédiction ou une promesse."},
 {n:19,cat:"arg",q:"Quel registre utilise un auteur qui écrit : « Pauvres enfants affamés, livrés à la cruauté du monde ! » ?",opts:["Comique","Didactique","Pathétique","Ironique"],ans:2,expl:"Le registre pathétique vise à émouvoir, à susciter la pitié. Les termes « pauvres », « affamés », « cruauté » jouent sur l'émotion du lecteur pour le persuader."},
-{n:20,cat:"temps",q:"Dans « Il eut fini avant que nous arrivions », « eut fini » est un :",opts:["Plus-que-parfait","Passé antérieur","Passé composé","Futur antérieur"],ans:1,expl:"Le passé antérieur exprime une action accomplie juste avant une autre action au passé simple. Il se forme avec l'auxiliaire au passé simple + participe passé."}
+{n:20,cat:"temps",q:"Dans « Il eut fini avant que nous arrivions », « eut fini » est un :",opts:["Plus-que-parfait","Passé antérieur","Passé composé","Futur antérieur"],ans:1,expl:"Le passé antérieur exprime une action accomplie juste avant une autre action au passé simple. Il se forme avec l'auxiliaire au passé simple + participe passé."},
+{n:21,cat:"arg",q:"Césaire écrit : « Une civilisation qui ruse avec ses principes est une civilisation moribonde. » Le procédé dominant est :",opts:["Une comparaison","Une anaphore avec gradation","Un argument par l'absurde","Une litote"],ans:1,expl:"L'anaphore « Une civilisation qui… est une civilisation… » est répétée trois fois avec gradation (décadente → atteinte → moribonde). Le rythme ternaire amplifie la dénonciation."},
+{n:22,cat:"temps",q:"« Quand il aura terminé ses études, il rentrera au pays. » Le futur antérieur exprime :",opts:["Un regret","Une action future accomplie AVANT une autre action future","Une habitude","Un ordre"],ans:1,expl:"Le futur antérieur exprime l'antériorité dans le futur : terminer ses études sera accompli AVANT rentrer au pays."},
+{n:23,cat:"arg",type:"vf",q:"VRAI ou FAUX : La synthèse d'une dissertation doit simplement résumer thèse et antithèse.",ans:false,expl:"Faux. La synthèse doit DÉPASSER le débat en proposant une idée nouvelle. Résumer thèse + antithèse n'est pas une synthèse — c'est une répétition."},
+{n:24,cat:"arg",q:"Montaigne écrit : « Chaque homme porte la forme entière de l'humaine condition. » C'est :",opts:["Un argument par l'exemple","Un argument d'autorité","Une thèse à portée universelle","Un contre-argument"],ans:2,expl:"Montaigne formule une thèse universelle : en s'étudiant (le « je » de l'essai), il prétend atteindre une vérité valable pour tous. C'est le principe de l'humanisme."},
+{n:25,cat:"temps",q:"« S'il avait travaillé, il aurait réussi. » Le conditionnel passé exprime :",opts:["Un fait réel du passé","Une hypothèse irréelle du passé (regret)","Un projet futur","Un ordre atténué"],ans:1,expl:"Le conditionnel passé (« aurait réussi ») avec « si + plus-que-parfait » exprime l'irréel du passé : le fait ne s'est PAS produit. Souvent un regret."}
 ];
 
 function render(){
